@@ -12,10 +12,37 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
 
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAdswcNmQQkMg5j4BGlnt6owOhAJmiJdG0",
+            authDomain: "duochat-ff75e.firebaseapp.com",
+            databaseURL: "https://duochat-ff75e.firebaseio.com",
+            projectId: "duochat-ff75e",
+            storageBucket: "duochat-ff75e.appspot.com",
+            messagingSenderId: "1063903370572",
+            appId: "1:1063903370572:web:5d437dd934987e534a03e9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
     <title>Duochat</title>
 </head>
 
 <body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand" id='nombreUsuario'>Chat</span>
+            <div id="botones">
+                <!-- Se visualiza con JS -->
+            </div>
+        </nav>
+    </div>
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
