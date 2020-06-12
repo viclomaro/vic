@@ -80,13 +80,13 @@ const contenidoChat = (user) => {
                 if (doc.data().uid === user.uid) {
                     contenidoProtegido.innerHTML += /*html*/ `
                     <div class="d-flex justify-content-end">
-                    <span class="badge badge-pill badge-primary mt-1">${doc.data().texto}</span>
+                    <span class="badge badge-pill badge-primary mt-1" style="padding:1%;">${doc.data().texto}</span>
                 </div>
                     `
                 } else {
                     contenidoProtegido.innerHTML += /*html*/ `
                     <div class="d-flex justify-content-start">
-                    <span class="badge badge-pill badge-secondary mt-1">${doc.data().texto}</span>
+                    <span class="badge badge-pill badge-success mt-1" style="padding:1%;">${doc.data().texto}</span>
                 </div>
                     `
                 }
