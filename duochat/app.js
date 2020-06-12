@@ -1,5 +1,8 @@
 const botones = document.querySelector('#botones');
 const nombreUsuario = document.querySelector('#nombreUsuario');
+const contenidoProtegido = document.querySelector('#contenidoProtegido');
+const formulario = document.querySelector('#formulario');
+const chat = document.querySelector('#inputChat');
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -9,14 +12,24 @@ firebase.auth().onAuthStateChanged(user => {
         `
         nombreUsuario.innerHTML = user.displayName;
         cerrarSesion()
+
+        formulario.classList = 'input-group fixed-bottom container'
+
+        contenidoChat(user)
     } else {
-        console.log('no existe');
+
         botones.innerHTML = /*html*/ `
         <button class="btn btn-outline-success mr-2" id="btnAcceder">Acceder</button>
         `
 
         iniciarSesion()
         nombreUsuario.innerHTML = 'Sin usuarios';
+
+        contenidoProtegido.innerHTML =/*html*/ `
+        <p class="text-center lead mt-3">Debes iniciar sesión</p>
+        `
+
+        formulario.classList = 'input-group fixed-bottom container d-none'
     }
 })
 
@@ -37,4 +50,48 @@ const cerrarSesion = () => {
     btnCerrarSesion.addEventListener('click', () => {
         firebase.auth().signOut();
     })
+}
+
+const contenidoChat = (user) => {
+
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        if (!inputChat.value.trim()) {
+            console.log('input vacio')
+            return
+        }
+
+        firebase.firestore().collection('chat').add({
+            texto: inputChat.value,
+            uid: user.uid,
+            fecha: Date.now()
+        })
+            .then(res => console.log('mensaje guardado'))
+            .catch(e => console.log(e));
+
+        inputChat.value = '';
+    })
+
+    firebase.firestore().collection('chat').orderBy('fecha')
+        .onSnapshot(query => {
+            contenidoProtegido.innerHTML = '';
+            query.forEach(doc => {
+                if (doc.data().uid === user.uid) {
+                    contenidoProtegido.innerHTML += /*html*/ `
+                    <div class="d-flex justify-content-end">
+                    <span class="badge badge-pill badge-primary mt-1">${doc.data().texto}</span>
+                </div>
+                    `
+                } else {
+                    contenidoProtegido.innerHTML += /*html*/ `
+                    <div class="d-flex justify-content-start">
+                    <span class="badge badge-pill badge-secondary mt-1">${doc.data().texto}</span>
+                </div>
+                    `
+                }
+
+                contenidoProtegido.scrollTop = contenidoProtegido.scrollHeight;
+            })
+        })
 }
