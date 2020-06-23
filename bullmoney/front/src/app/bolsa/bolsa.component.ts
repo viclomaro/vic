@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BolsaComponent implements OnInit {
 
-  constructor() { }
+  valores: any;
+
+  constructor() {
+    this.valores = JSON.parse(localStorage.getItem("valores"));
+    console.log(this.valores);
+  }
 
   ngOnInit(): void {
   }

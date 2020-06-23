@@ -1,0 +1,28 @@
+<table class="table container text-center" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Fecha compra</th>
+        <th scope="col">Acción</th>
+        <th scope="col">Titulos</th>
+        <th scope="col">Precio acción</th>
+        <th scope="col">Compra total</th>
+        <th scope="col">Comision</th>
+        <th scope="col">Compra neta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let valor of valores, let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{valor.buyDate}}</td>
+        <td>{{valor.accion}}</td>
+        <td>{{valor.titulos}}</td>
+        <td>{{valor.precioAccion}} €</td>
+        <td>{{valor.compraTotal}} €</td>
+        <td>{{valor.comision}} €</td>
+        <td>{{valor.compraNeta}} €</td>
+      </tr>
+    </tbody>
+  </table>
+  
+ 
