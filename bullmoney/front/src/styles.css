@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+.form-group input{
+    margin: 0 15px;
+}
+
+input[type="submit"]{
+   background-color: green;
+   text-align: center;
+}
+
+.firstGroup{
+    margin-left: 100px;
+}
+
+.secondGroup{
+    margin-left: 200px;
+}
+
+.formInicio{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.formFinal{
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
