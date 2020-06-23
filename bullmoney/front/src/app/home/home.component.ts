@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Valor } from '../../models/valor';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,9 @@ export class HomeComponent implements OnInit {
 
   form: any;
   total: boolean;
+  arrValores: Array<Valor>;
 
+  // TODO: Hacer validaciones
   constructor() {
     this.form = {
       buyDate: '',
@@ -21,6 +24,7 @@ export class HomeComponent implements OnInit {
       compraNeta: ''
     }
     this.total = false;
+    this.arrValores = [];
 
   }
 
@@ -28,28 +32,18 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('Formulario enviado');
-    console.log(this.form);
     if (this.form.titulos && this.form.precioAccion != '') {
       this.total = true;
+      this.form.compraNeta = this.form.titulos * this.form.precioAccion;
+      this.form.compraTotal = this.form.compraNeta + this.form.comision;
     }
-    this.form.compraNeta = this.form.titulos * this.form.precioAccion;
-    this.form.compraTotal = this.form.compraNeta + this.form.comision;
+
   }
 
   validarCompra() {
-
-    console.log(this.form.totalCompra)
+    this.arrValores.push(this.form);
+    localStorage.setItem('valores', JSON.stringify(this.arrValores));
+    this.form = {};
   }
-
-  calculoTotal(titulos, precioAccion) {
-    let total = titulos * precioAccion;
-    console.log(total)
-    return total;
-  }
-
-
-
-
 
 }

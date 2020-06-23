@@ -1,18 +1,11 @@
+/* NAVBAR */
+
+.navbar{
+    background-color: blue;
+}
+
 .form-group input{
     margin: 0 15px;
-}
-
-input[type="submit"]{
-   background-color: green;
-   text-align: center;
-}
-
-.firstGroup{
-    margin-left: 100px;
-}
-
-.secondGroup{
-    margin-left: 200px;
 }
 
 .formInicio{
@@ -27,3 +20,5 @@ input[type="submit"]{
     border-radius: 10px;
     border: 1px solid black;
 }
+
+

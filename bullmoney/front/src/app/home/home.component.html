@@ -2,7 +2,7 @@
     <h3 class="titulo">
         Añade tu inversión
     </h3>
-    <form class="container formInicio" #Form1="ngForm" (ngSubmit)="onSubmit()">
+    <form class="container formInicio text-center" id="form" #Form1="ngForm" (ngSubmit)="onSubmit()">
         <div class="form-group firstGroup">
             <label for="buyDate">Fecha de compra</label>
             <input type="date" name="buyDate" #buyDate="ngModel" [(ngModel)]="form.buyDate">
@@ -22,22 +22,18 @@
             <input type="number" name="comision" #comision="ngModel" [(ngModel)]="form.comision">
         </div>
 
-        <input type="submit" value="Enviar" class="btn btn-succes ">
+        <input type="submit" value="Enviar" class="btn btn-primary">
     </form>
 
-    <form class="container formFinal" #Form2="ngForm" (ngSubmit)="validarCompra()">
+    <form class="container formFinal text-center" id="form" #Form2="ngForm" (ngSubmit)="validarCompra()" *ngIf="total">
         <div class="form-group">
-            <!--  *ngIf="total" -->
             <label for="compraTotal">Total compra con comisión</label>
             <input type="number" name="compraTotal" #compraTotal="ngModel" [(ngModel)]="form.compraTotal">
 
             <label for="compraNeta">Total neto de la compra</label>
             <input type="number" name="compraNeta" #compraNeta="ngModel" [(ngModel)]="form.compraNeta">
-
-            <div class="validarCompra">
-                <input type="submit" value="Confirmar compra" class="btn btn-succes">
-            </div>
         </div>
 
+        <input type="submit" value="Confirmar compra" class="btn btn-primary">
     </form>
 </div>
