@@ -7,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BalanceComponent implements OnInit {
 
-  constructor() { }
+  arrValores: any;
 
-  ngOnInit(): void {
+  constructor() {
+    this.arrValores = [];
   }
 
+  ngOnInit(): void {
+    let valoresCompra = JSON.parse(localStorage.getItem('valoresCompra'));
+    console.log(valoresCompra)
+
+    // TODO:obtener valores del array
+    for (let valor of valoresCompra) {
+      let compra = valor.compraNeta;
+    }
+
+    let valoresVenta = JSON.parse(localStorage.getItem('valoresVenta'));
+    console.log(valoresVenta);
+
+    for (let valor of valoresVenta) {
+      let venta = valor.ventaNeta;
+      return venta
+    }
+
+
+  }
 }

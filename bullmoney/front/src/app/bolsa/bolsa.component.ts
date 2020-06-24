@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BolsaComponent implements OnInit {
 
-  valores: any;
+  valoresCompra: any;
+  valoresVenta: any;
 
   constructor() {
-    this.valores = JSON.parse(localStorage.getItem("valores"));
-    console.log(this.valores);
+    this.valoresCompra = JSON.parse(localStorage.getItem("valoresCompra"));
+    console.log(this.valoresCompra);
+    this.valoresVenta = JSON.parse(localStorage.getItem("valoresVenta"));
+    console.log(this.valoresVenta);
   }
 
   ngOnInit(): void {
