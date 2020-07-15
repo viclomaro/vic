@@ -152,6 +152,7 @@ console.warn('Ejercicio 5');
 console.log(x);
 
 /*
+6.-
 Indique cual es la forma de crear un objeto en JavaScript
 */
 var person1 = { "firstname": "John", "Lastname": "Galt" };
@@ -162,4 +163,23 @@ var person4 = new Object(); person4.Firstname = "John"; person4.Lastname = "Galt
 console.warn('Ejercicio 6');
 console.log(person1);
 console.log(person4);
+
+/*
+7.-
+¿Cuál es el valor de la variable x al finalizar la ejecución del siguiente código?
+5
+4 -  Respuesta correcta, si se cumple la condicion (y>z) el resultado es la primera opcion (y-z)
+21
+-4
+*/
+
+var y = 7;
+var z = 3;
+var x = 5;
+
+x = (y > z) ? (y - z) : (y * z);
+
+console.log(x);
+
+
 
