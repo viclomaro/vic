@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   items = [];
   idSearched: number;
   textSearched: string;
+  error: string = '';
 
   ngOnInit() {
     this.createElements();
@@ -21,7 +22,8 @@ export class AppComponent implements OnInit {
   createElements() {
     for (let i = 0; i <= 4000; i++) {
       this.item.id = i;
-      this.item.photo = `http://www.photo/${i}`;
+      this.item.photo = `https://picsum.photos/${i}`;
+      //this.item.photo = `https://www.photos/${i}`;
       this.item.text = `random_lorem_ipsum_text${i}`
       this.items.push({ ...this.item });
     }
@@ -29,8 +31,12 @@ export class AppComponent implements OnInit {
 
   searchId() {
     const itemSearched = this.items.find(item => item.id == this.idSearched);
-    this.items = [];
-    this.items.push(itemSearched);
+    if (itemSearched != undefined) {
+      this.items = [];
+      this.items.push(itemSearched);
+    } else {
+      this.error = 'No hay resultados para la búsqueda'
+    }
   }
 
   deleteSearch() {
@@ -38,12 +44,18 @@ export class AppComponent implements OnInit {
     this.createElements();
     this.idSearched = null;
     this.textSearched = null;
+    this.error = '';
   }
 
   searchText() {
     const itemSearched = this.items.find(item => item.text == this.textSearched);
-    this.items = [];
-    this.items.push(itemSearched);
+    if (itemSearched != undefined) {
+      this.items = [];
+      this.items.push(itemSearched);
+    } else {
+      this.error = 'No hay resultados para la búsqueda'
+    }
+
   }
 
 }
