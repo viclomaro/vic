@@ -14,7 +14,19 @@
   <li>Se valorará el uso de test unitarios, E2E y componentes.</li>
 </ol>
 
+<div>
+  <input type="text" placeholder="search ID" [(ngModel)]="idSearched">
+  <button (click)="searchId()">SearchId</button>
+  <button (click)="deleteSearch()">Delete Search</button>
+</div>
+
+<div>
+  <input type="text" placeholder="search Text" [(ngModel)]="textSearched">
+  <button (click)="searchText()">SearchText</button>
+  <button (click)="deleteSearch()">Delete Search</button>
+</div>
+
 <h2>Listado de elementos</h2>
 <div *ngFor="let item of items">
-  <p>{{item.id}} {{item.photo}} {{item.text}}</p>
+  <p>id: {{item.id}} url: {{item.photo}} text: {{item.text}}</p>
 </div>
