@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/ruletaSuerte",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
