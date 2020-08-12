@@ -1,0 +1,33 @@
+.confirmar {
+    text-align: right;
+}
+
+i {
+    margin-left: 1em;
+    font-size: 1.2em;
+}
+
+.cantidad {
+    padding-left: 2em;
+}
+
+img {
+    width: 100px;
+    height: auto;
+}
+
+.texto {
+    padding-top: 2.2em;
+}
+
+.cerrar {
+    cursor: pointer;
+}
+
+.boton-primario {
+    margin-bottom: 50px;
+}
+
+.msgPedidoRealizado, .msgNoProductos {
+    font-size: 2em;
+}

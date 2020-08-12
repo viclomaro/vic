@@ -1,0 +1,189 @@
+<!-- IMAGEN PRINCIPAL -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active slider">
+            <img src="../assets/images/slider/imagen8.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+<!-- FIN IMAGEN PRINCIPAL -->
+
+<!-- DESCRIPCIÓN PRODUCTOS -->
+<section class="sectiongrey">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>
+                    <span class="ion-minus"></span>Productos<span class="ion-minus"></span>
+                </h2>
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="../../assets/images/home/main.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6 section-productos">
+                <h3>¿Qué cámara me compro?</h3>
+                <p class="texto">La mejor cámara de fotos que puedes comprar es aquella que más se adapta a tus
+                    necesidades fotográficas y a tu presupuesto. Puede que solo estés pensando en comprar cámaras de
+                    fotos baratas o, por contra, quieras comprarte una cámara fotográfica
+                    digital de gama alta pero en cualquier caso, es muy importante que tengas en cuenta
+                </p>
+                <button class="btn boton-primario" [routerLink]="['/productos']">Ir a Productos</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FIN DESCRIPCIÓN PRODUCTOS -->
+
+<!-- CUESTIONARIO -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>¿Necesitas ayuda para encontrar tu cámara?</h2>
+                <p>Utiliza nuestro filtro para ajustar tu búsqueda</p>
+            </div>
+            <div class="col-12">
+                <table class="table text-center">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Tecnica fotográfica</th>
+                            <td>Naturaleza<input id="tecnicanaturaleza" value="tecnicanaturaleza" type="checkbox"
+                                    (change)="manejarTecnicaNaturaleza($event)"></td>
+                            <td>Nocturna<input id="tecnicanocturna" value="tecnicanocturna" type="checkbox"
+                                    (change)="manejarTecnicaNocturna($event)"></td>
+                            <td>Retrato/estudio<input id="tecnicaretrato" value="tecnicaretrato" type="checkbox"
+                                    (change)="manejarTecnicaRetrato($event)"></td>
+                            <td>Macro<input id="tecnicamacro" value="tecnicamacro" type="checkbox"
+                                    (change)="manejarTecnicaMacro($event)"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Presupuesto</th>
+                            <td>10-250€<input type="radio" name="radio" value="0" (change)="manejarCheckPrecio($event)">
+                            </td>
+                            <td>275-500€<input type="radio" name="radio" value="1"
+                                    (change)="manejarCheckPrecio($event)"></td>
+                            <td>550-1000€<input type="radio" name="radio" value="2"
+                                    (change)="manejarCheckPrecio($event)"></td>
+                            <td>1000-2000€<input type="radio" name="radio" value="3"
+                                    (change)="manejarCheckPrecio($event)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <input value="Ver resultado" type="button" class="btn btn-dark btn-lg btn-block"
+                    (click)="manejarResultado()">
+                <p *ngIf="mostrarNoResultados" class="no-result text-center">No hay ningún resultado para esta búsqueda
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FIN CUESTIONARIO -->
+
+<!-- DESCRIPCION CURSOS -->
+<section class="sectiongrey">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>
+                    <span class="ion-minus"></span>Cursos<span class="ion-minus"></span>
+                </h2>
+            </div>
+            <div class="col-12 col-md-6 section-cursos">
+
+                <h3>Captura los mejores momentos</h3>
+                <p class="texto">Fotografiar es algo más que hacer una buena foto. En los cursos aprenderás a
+                    seleccionar y secuenciar tus fotografías, a contar historias con tus imágenes y a expresarte a
+                    través de la cámara. Conocerás personas que comparten tu pasión
+                    por la fotografía, en un entorno especialmente pensado para ayudarte a desarrollar tu creatividad.
+                </p>
+                <button class="btn boton-primario" [routerLink]="['/cursos']">Ir a Cursos</button>
+
+            </div>
+            <div class="col-12 col-md-6">
+                <img src="../../assets/images/home/pies.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- FIN DESCRIPCION CURSOS -->
+
+<!-- DESCRIPCIÓN BLOG -->
+<section class="section-blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-offset-3 text-center">
+                <h2>
+                    <span class="ion-minus"></span>Blog Posts<span class="ion-minus"></span>
+                </h2>
+                <p>Emociones, sensaciones, motivaciones para escribir, son algunas de las características de este blog.
+                    Que seguramente te servirán de inspiración, y te animarán a llevar tu cámara al hombro allí hacía
+                    donde te dirijas. </p><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#slider" data-slide-to="0" class="active"></li>
+                    <li data-target="#slider" data-slide-to="1"></li>
+                </ol>
+
+                <!-- CCAROUSEL POST -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <div>
+                                        <img class="card-img-top" src="../../assets/images/blog/foto.png" alt=""
+                                            width="100%">
+                                    </div>
+                                    <div class="card-block">
+                                        <h4 class="card-title">21 lugares recomendados por fotógrafos.</h4>
+                                        <p class="card-text">Descubre los lugares más sorprendentes y por ello los más fotografiados sin salir de casa.<br>
+                                            ¡No puede ser más barato!.</p>
+                                        <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
+                                            leyendo</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <div>
+                                        <img class="card-img-top" src="../../assets/images/blog/foto2.jpg" alt=""
+                                            width="100%">
+                                    </div>
+                                    <div class="card-block">
+                                        <h4 class="card-title">Pierde el miedo al uso de tripode para tus fotografías.</h4>
+                                        <p class="card-text">Con el uso del tripode podrás obtener mejores resultados sin necesidad de cargar con la cámara.</p>
+
+                                        <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
+                                            leyendo</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-4">
+                                <div class="card text-center">
+                                    <img class="card-img-top" src="../../assets/images/blog/foto3.jpg" alt=""
+                                        width="100%">
+                                    <div class="card-block">
+                                        <h4 class="card-title">Los resultados de la fotografía macro.</h4>
+                                        <p class="card-text">Descubrir hasta el mínimo detalle de todo lo que puedas imaginar está al alcance de tu cámara.</p>
+                                        <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
+                                            leyendo</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN CAROUSEL POST -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- FIN DESCRIPCIÓN BLOG -->

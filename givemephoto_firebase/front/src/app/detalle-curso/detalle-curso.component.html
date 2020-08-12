@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 card-curso" *ngFor="let curso of cursos">
+            <div class="row flex-column-reverse flex-md-row">
+                <div class="col-12 col-md-6">
+                    <h3>{{curso.titulo}}</h3>
+                    <p class="card-text">{{curso.descripcion}}</p>
+                    <p class="card-text">Duracion: {{curso.duracion}}h.</p>
+                    <p class="card-text">Precio: {{curso.precio}}€</p>
+                    <button class="btn boton-primario" (click)="clickAddCurso(curso)">Añadir</button>
+                </div>
+                <div class="col-12 col-md-6">
+                    <img [src]="curso.imagen" class="card-img-top">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

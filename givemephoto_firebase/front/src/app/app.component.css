@@ -1,0 +1,94 @@
+.navbar {
+    background: transparent;
+    height: 80px;
+    padding: 0 50px;
+}
+
+.navbar-nav {
+    color: white;
+    font-size: 1.2em;
+}
+
+.navbar .navbar-nav a {
+    margin: 0 15px;
+    color: black;
+}
+
+.navbar .navbar-nav a.icon {
+    margin: 0 5px;
+}
+
+.navbar-collapse.show {
+    background: rgb(202, 212, 216);
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: black;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:focus,
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: transparent;
+}
+
+.form-control {
+    border-radius: 30px;
+}
+
+.btn-outline-success:hover {
+    color: rgb(5, 5, 5);
+    background-color: transparent;
+}
+
+.perfil {
+    margin-left: -70px;
+}
+
+.btn {
+    color: rgb(56, 56, 63);
+    border: blue;
+    font-size: 20px;
+}
+
+.iconos {
+    font-size: 15px;
+}
+
+
+footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    background: rgb(31, 30, 30);
+    text-align: center;
+    bottom: 0;
+}
+
+footer .arrow a {
+    color: white;
+}
+
+footer .social {
+    list-style-type: none;
+}
+
+footer .row .social {
+    margin: 20px;
+}
+
+footer .social li {
+    display: inline;
+    margin: 20px 20px;
+}
+
+footer ul li a {
+    color: white;
+}
+
+.copy {
+    height: 50px;
+    background: rgb(17, 17, 17);
+    color: grey;
+}
+

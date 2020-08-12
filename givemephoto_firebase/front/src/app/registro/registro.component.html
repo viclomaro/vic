@@ -1,0 +1,113 @@
+<div class="container">
+    
+    <!-- Imagen de fondo -->
+    <div class="fondo-img">
+        <img src="../../assets/images/login/login1.jpg" class="imagen">
+    </div>
+    <!-- Fin imagen de fondo -->
+
+
+    <div class="row caja">
+
+        <!-- Registro -->
+        <div class="col-12 col-md-6 register">
+            <h3>REGÍSTRATE</h3>
+            <form [formGroup]="formRegistro" (ngSubmit)="onSubmitRegistro()">
+
+                <!-- nombre -->
+                <div>
+                    <input type="text" placeholder="Nombre" name="nombre" formControlName="nombre">
+                    <p class="error"
+                        *ngIf="formRegistro.controls.nombre.errors?.minlength && formRegistro.controls.nombre.touched">
+                        El campo nombre debe tener una longitud minima de 3 caracteres</p>
+                    <p class="error"
+                        *ngIf="formRegistro.controls.nombre.errors?.required && formRegistro.controls.nombre.touched">El
+                        campo nombre es obligatorio</p>
+                </div>
+                <!-- Fin nombre -->
+
+                <!-- Apellidos -->
+                <div>
+                    <input type="text" placeholder="Apellidos" name="apellidos" formControlName="apellidos">
+                    <p class="error"
+                        *ngIf="formRegistro.controls.apellidos.errors?.minlength && formRegistro.controls.apellidos.touched">
+                        El campo apellidos debe tener mínimo 3 caracteres</p>
+                    <p class="error"
+                        *ngIf="formRegistro.controls.apellidos.errors?.required && formRegistro.controls.apellidos.touched">
+                        El campo apellidos es obligatorio</p>
+                </div>
+                <!-- Fin apellidos -->
+
+                <!-- Email -->
+                <div>
+                    <input type="text" placeholder="Email" name="email" formControlName="email">
+                    <p class="error"
+                        *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.touched">El
+                        email debe tener un formato válido</p>
+                </div>
+                <!-- Fin email -->
+
+                <!-- Contraseña -->
+                <div>
+                    <input type="password" placeholder="Contraseña" name="contraseña" formControlName="password">
+                    <p class="error"
+                        *ngIf="formRegistro.controls.password.errors?.required && formRegistro.controls.password.touched">
+                        La contraseña es obligatoria</p>
+                </div>
+                <!-- Fin contraseña -->
+
+                <!-- Repite contraseña -->
+                <div>
+                    <input type="password" placeholder="Repite tu contraseña" name="repitepassword"
+                        formControlName="repitepassword">
+                    <p class="error"
+                        *ngIf="formRegistro.controls.repitepassword.errors?.required && formRegistro.controls.repitepassword.touched">
+                        Repite tu contraseña</p>
+                </div>
+                <!-- Fin repite contraseña -->
+
+                <!-- Boton registrar -->
+                <div>
+                    <input type="submit" class="btn boton-primario" [disabled]="!formRegistro.valid"
+                        value="REGISTRARME">
+                </div>
+
+                <p *ngIf="mostrarRegistro">El registro se ha realizado correctamente</p>
+
+                <!-- Fin boton registrar -->
+            </form>
+        </div>
+        <!-- Fin registro -->
+
+        <!-- Login -->
+        <div class="col-12 col-md-6 login">
+            <h3>ACCEDER A CUENTA</h3>
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmitLogin()">
+                <!-- Usuario -->
+                <div>
+                    <input class="usuario" type="text" placeholder="Email" name="email" formControlName="email">
+                    <p class="error"
+                        *ngIf="formLogin.controls.email.errors?.required && formLogin.controls.email.touched">El email
+                        debe tener un formato válido</p>
+                </div>
+                <!-- Fin usuario -->
+
+                <!-- Contraseña -->
+                <div>
+                    <input type="password" placeholder="Contraseña" name="password" formControlName="password">
+                    <p class="error"
+                        *ngIf="formLogin.controls.password.errors?.required && formLogin.controls.password.touched">La
+                        contraseña es obligatoria</p>
+                </div>
+                <!-- Fin contraseña -->
+
+                <div>
+                    <input type="submit" class="btn boton-primario" value="ACCEDER">
+                </div>
+                <p *ngIf="mostrarLogin">Te has logado correctamente</p>
+            </form>
+        </div>
+        <!-- Fin login -->
+
+    </div>
+</div>

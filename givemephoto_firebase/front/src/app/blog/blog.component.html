@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-9">
+            <!-- Blog central -->
+            <div class="row" *ngFor="let post of listaPosts">
+                <div class="col-12 post">
+                    <h3>{{post.titulo}}</h3>
+                    <div>
+                        <img [src]="post.imagen">
+                    </div>
+
+                    <div>
+                        <p class="parrafo">{{post.texto}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fin blog central -->
+
+        <!-- Blog lateral -->
+        <div class="col-12 col-md-3">
+            <div class="post-lateral" *ngFor="let post of listaPostsLateral">
+                <h5>{{post.titulo}}</h5>
+                <div>
+                    <img [src]="post.imagen">
+                </div>
+
+                <div class="col-12">
+                    <p>{{post.texto}}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Fin blog lateral -->
+    </div>
+</div>

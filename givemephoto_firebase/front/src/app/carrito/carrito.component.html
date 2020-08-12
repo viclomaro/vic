@@ -1,0 +1,82 @@
+<div class="body container">
+    <!-- Mensaje no productos -->
+    <div class="msgNoProductos" *ngIf="mostrarNoProductos">
+        <p>No hay productos en la cesta</p>
+    </div>
+    <!-- Fin mensaje no productos -->
+
+    <!-- Tabla productos -->
+    <table class="table">
+        <thead>
+            <tr *ngIf="mostrarProductos">
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of listaPedido">
+                <td><img [src]="producto.imagen1">{{producto.marca}} {{producto.modelo}}</td>
+                <td class="texto">{{producto.precio}}€</td>
+                <td class="cantidad texto">1x</td>
+                <td class="texto">{{producto.precio}}€</td>
+                <td class="texto"><i (click)="manejarBorrar(producto.id)" class="far fa-times-circle cerrar"></i></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td *ngIf="mostrarConfirmarPedido"><strong>TOTAL</strong></td>
+                <td *ngIf="mostrarConfirmarPedido"><strong>{{sumaProductos()}}€</strong></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Fin tabla productos -->
+
+    <!-- Boton confirmar pedido -->
+    <div class="confirmar">
+        <button type="button" class="btn boton-primario" (click)="realizarPedido()"
+            *ngIf="mostrarConfirmarPedido">Confirmar Pedido</button>
+    </div>
+    <!-- Fin boton confirmar pedido -->
+
+    <!-- Formulario telefono y direccion -->
+    <div *ngIf="mostrarRealizarPedido">
+        <p>Para finalizar su pedido rellene los siguientes campos:</p>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <!-- Direccion -->
+                <input type="text" class="form-control" placeholder="Dirección de entrega" formControlName="direccion">
+                <p class="error"
+                    *ngIf="formulario.controls.direccion.errors?.required && formulario.controls.direccion.touched">El
+                    campo dirección es necesario</p>
+            </div>
+            <!-- Fin direccion -->
+
+            <!-- Telefono -->
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Teléfono de contacto" formControlName="telefono">
+                <p class="error"
+                    *ngIf="formulario.controls.telefono.errors?.required && formulario.controls.telefono.touched">El
+                    campo teléfono es necesario</p>
+            </div>
+            <!-- Fin telefono -->
+
+            <!-- Boton realizar pedido -->
+            <div class="confirmar">
+                <input type="submit" class="btn boton-primario" value="realizar pedido" [disabled]="!formulario.valid">
+            </div>
+            <!-- Fin boton realizar pedido -->
+        </form>
+    </div>
+    <!-- Fin formulario direccion y telefono -->
+
+    <!-- Mensaje pedido realizado -->
+    <div class="msgPedidoRealizado">
+        <p *ngIf="mostrarMsgPedidoRealizado">Pedido realizado.</p>
+    </div>
+    <!-- Fin mensaje pedido realizado -->
+
+</div>

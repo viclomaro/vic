@@ -1,0 +1,86 @@
+<div class="body container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                aria-selected="true">Mis datos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                aria-selected="false">Mis pedidos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                aria-selected="false">Mis cursos</a>
+        </li>
+    </ul>
+    
+    <!--Pestaña datos de usuario -->
+    <div class="tab-content" id="myTabContent" *ngFor="let item of usuario">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <br>
+            <h2>Perfil de usuario<i class="far fa-address-card"></i></h2>
+            <hr>
+            <ul>
+                <li>Nombre: {{item.nombre}}.</li>
+                <li>Apellidos: {{item.apellidos}}.</li>
+                <li>Email: {{item.email}}.</li>
+                <li>Fecha Registro: {{item.fecharegistro | date: 'dd-MM-yy'}}.</li>
+            </ul>
+            <button type="button" class="btn btn-light">Editar perfil</button>
+        </div>
+        <!-- Fin pestaña datos de usuario -->
+
+        <!--    Pestaña de pedidos -->
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <br>
+            <h2>Historial de pedidos<i class=" fas fa-box-open "></i></h2>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col ">Fecha de pedido</th>
+                        <th scope="col ">Productos</th>
+                        <th scope="col ">Estado</th>
+                        <th scope="col ">Total Pedido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let pedido of pedidos">
+                        <tr *ngFor="let producto of pedido.productos">
+                            <td>{{pedido.fechapedido | date: 'dd-MM-yyyy'}}</td>
+                            <td>{{producto.marca}} {{producto.modelo}}</td>
+                            <td>Entregado</td>
+                            <td>{{producto.precio}}€</td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+        <!-- Fin pestaña detalle de pedido -->
+
+        <!-- Pestaña detalle de cursos -->
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab">
+            <br>
+            <h2>Historial de cursos realizados<i class="fas fa-lightbulb "></i></h2>
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col ">Fecha de realización</th>
+                        <th scope="col ">Curso</th>
+                        <th scope="col ">Estado</th>
+                        <th scope="col ">Total Pedido</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let curso of pedidoCurso">
+                    <tr>
+                        <td>{{curso.fecha_compra | date: 'dd-MM-yyyy'}}</td>
+                        <td>{{curso.titulo}}</td>
+                        <td>Realizado</td>
+                        <td>{{curso.precio}}€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Fin pestaña detalle de cursos -->
+
+    </div>
+</div>

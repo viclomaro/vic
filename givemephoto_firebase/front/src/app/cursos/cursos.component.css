@@ -1,0 +1,25 @@
+.caja-imagen {
+    width: 100%;
+}
+
+.row {
+    padding: 30px 0;
+}
+
+@media(min-width:768px) {
+    .caja-texto {
+        margin-left: -200px;
+        background: #ffffff;
+        padding: 20px;
+    }
+    .caja-texto-par {
+        margin-right: -200px;
+        background: #ffffff;
+        padding: 20px;
+        z-index: 1;
+    }
+    .alineado-vertical {
+        display: flex;
+        align-items: center;
+    }
+}

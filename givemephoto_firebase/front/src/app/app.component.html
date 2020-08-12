@@ -1,0 +1,122 @@
+<router-outlet></router-outlet>
+<!--inicio Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+    <a class="navbar-brand logo" href="#"><i class="fas fa-camera-retro"></i></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Home -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <!-- Fin home -->
+
+            <!-- Productos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle productos" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#" [routerLink]="['/productos']">Ver Todos</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/productos/camaras']">Camaras</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/productos/objetivos']">Objetivos</a>
+                    <a class="dropdown-item" href="#" [routerLink]="['/productos/accesorios']">Accesorios</a>
+                </div>
+            </li>
+            <!-- Fin productos -->
+
+            <!-- Cursos -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="#" id="navbarDropdown" role="button" [routerLink]="['/cursos']">Cursos
+                </a>
+            </li>
+            <!-- Fin cursos -->
+
+            <!-- Blog -->
+            <li class="nav-item">
+                <a class="nav-link" href="#" [routerLink]="['/blog']">Blog</a>
+            </li>
+        </ul>
+        <!-- Fin Blog -->
+
+        <!-- Buscador -->
+        <form class="form-inline my-2 my-lg-0 buscador">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <!-- Fin buscador -->
+
+        <div class="iconos">
+            <!-- Navbar carrito y usuario -->
+            <ul class="navbar-nav mr-auto">
+
+                <!-- Carrito -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link icon" href="#" [routerLink]="['/carrito']"><i
+                            class=" fas fa-shopping-cart"></i></a>
+                </li>
+                <!-- Fin carrito -->
+
+                <!-- Usuario -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle icon" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i>
+                    </a>
+
+                    <div class="dropdown-menu perfil" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" [routerLink]="['/registro']">Registrate/Login</a>
+                        <a class="dropdown-item" href="#" [routerLink]="['/user']">Mi perfil</a>
+                        <a class="dropdown-item" href="#" [routerLink]="['/user']"
+                            (click)="manejarCerrarSesion()">Cerrar sesión</a>
+                    </div>
+                </li>
+                <!-- Fin usuario -->
+
+            </ul>
+            <!-- Fin navbar carrito y usuario -->
+
+        </div>
+    </div>
+
+    <!-- Usuario logado -->
+    <div *ngFor="let item of usuario">
+        <p>Hola {{item.nombre}}</p>
+    </div>
+    <!-- Fin usuario logado -->
+
+</nav>
+<!-- Fin Navbar -->
+
+<!-- Footer -->
+
+<footer class="container-fluid">
+    <div class="arrow">
+        <a href="#navbarSupportedContent"><i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <ul class="social">
+                <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                <li><a href=""><i class="fab fa-youtube"></i></a></li>
+                <li><a href=""><i class="fab fa-google"></i></a></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row copy">
+        <div class="col-12">
+            <p>Copyright</p>
+        </div>
+    </div>
+
+</footer>
+<!-- Fin footer -->

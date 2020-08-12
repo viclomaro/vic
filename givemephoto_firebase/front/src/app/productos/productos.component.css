@@ -1,0 +1,134 @@
+/* FILTRO */
+
+.container-fluid {
+    padding-top: 150px;
+    padding-bottom: 6rem;
+}
+
+.filtro-column {
+    background-color: rgb(247, 243, 243);
+}
+
+.filtro {
+    margin-left: 20px;
+    margin-top: 50px;
+    color: black;
+}
+
+.filtro h4 {
+    margin: 25px;
+    font-size: 1.2rem;
+}
+
+.filtro h4 i {
+    font-size: 0.8rem;
+}
+
+.filtro h2 {
+    text-align: center;
+}
+
+.filtros {
+    list-style-type: none;
+}
+
+.filtro .filtros,
+.filtros li {
+    margin: 0.5em 0em;
+    font-size: 1.2em;
+}
+
+.filtro .filtros .tituloLi {
+    font-size: 1em;
+    list-style: none;
+}
+
+.filtro .filtros .range-slider {
+    margin-left: -4em;
+    margin-top: 1em;
+}
+
+/* PRODUCTOS */
+
+.card-producto {
+    padding: 40px;
+}
+
+.info {
+    color: rgb(116, 46, 46);
+    font-size: 1.2em;
+}
+
+.info i {
+    font-size: 10px;
+}
+
+.caracteristicas {
+    margin-top: 10px;
+}
+
+.precioText {
+    font-size: 1.5em;
+}
+
+.precio {
+    font-weight: bold;
+    text-align: center;
+}
+
+.boton-primario {
+    background-color: transparent;
+    border: 1px solid #212122;
+    color: #212122;
+    padding: 10px 30px;
+    border-radius: 0!important;
+}
+
+.boton-primario:hover {
+    background-color: #212122;
+    border: 1px solid #212122;
+    color: #fff
+}
+
+.fa-chevron-down {
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: rotate(-90deg);
+}
+
+.fa-chevron-down:hover {
+    transform: rotate(0deg);
+}
+
+.fa-trash-alt {
+    margin-left: 0.5em;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.fa-trash-alt:hover {
+    transform: rotate(360deg);
+}
+
+p span {
+    font-weight: 800;
+}
+
+@media(max-width:1003px) {
+    .filtro {
+        margin-left: 10px;
+    }
+    .titulofiltro {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width:426px) {
+    .filtro {
+        margin-left: 40px;
+    }
+    .titulofiltro {
+        font-size: 1.5rem;
+    }
+}

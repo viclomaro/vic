@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    padding-top: 100px;
+    padding-bottom: 6rem;
+}
+
+.boton-primario {
+    background-color: transparent;
+    border: 1px solid #212122;
+    color: #212122;
+    padding: 15px 60px;
+    border-radius: 0!important;
+}
+
+.boton-primario:hover {
+    background-color: #212122;
+    border: 1px solid #212122;
+    color: #fff
+}
