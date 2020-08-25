@@ -10,9 +10,10 @@ export class CursosService {
   baseUrlDetalleCurso: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/cursos';
-    this.baseUrlDetalleCurso = 'http://localhost:3000/api/detalleCursos';
-
+    /*     this.baseUrl = 'http://localhost:3000/api/cursos'; */
+    /*     this.baseUrlDetalleCurso = 'http://localhost:3000/api/detalleCursos'; */
+    this.baseUrl = 'https://givemephotoback.herokuapp.com/cursos';
+    this.baseUrlDetalleCurso = ' https://givemephotoback.herokuapp.com/cursos';
   }
 
 

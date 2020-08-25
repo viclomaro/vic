@@ -12,21 +12,21 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // mysql
-/*
-const connection = mysql.createConnection({
-    host: 'us-cdbr-east-02.cleardb.com',
-    user: 'bfb0b353b31d76',
-    password: '0edcf1c2',
-    database: 'heroku_909f062706268e3',
 
-    /* host: '127.0.0.1',
-     user: 'root',
-     password: '',
-     port: '3306',
-     database: 'givemephoto' 
-});
-*/
+/* const connection = mysql.createConnection({
+         host: 'us-cdbr-east-02.cleardb.com',
+        user: 'bfb0b353b31d76',
+        password: '0edcf1c2',
+        database: 'heroku_909f062706268e3', 
 
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    port: '3306',
+    database: 'givemephoto'
+}); */
+
+//Heroku bbdd
 var pool = mysql.createPool({
     connectionLimit: 10,
     host: 'us-cdbr-east-02.cleardb.com',
@@ -35,18 +35,14 @@ var pool = mysql.createPool({
     database: 'heroku_909f062706268e3'
 });
 
-/* pool.getConnection(function (err, connection) {
-    // Use the connection
-    connection.query('SELECT * from productos', function (err, rows) {
-        // And done with the connection.
-        if (rows.length > 0) {
-            connection.json(rows);
-        }
-        connection.release();
-        // Don't use the connection here, it has been returned to the pool.
-    });
+// local bbdd
+/* var pool = mysql.createPool({
+    connectionLimit: 10,
+    host: '127.0.0.1',
+    user: 'root',
+    password: '',
+    database: 'givemephoto'
 }); */
-
 
 // Route
 app.get('/', (req, res) => {
@@ -67,6 +63,52 @@ app.get('/productos', (req, res) => {
         });
     })
 });
+
+app.get('/cursos/iniciacion', (req, res) => {
+    const sql = `Select * from cursos WHERE nivel = "iniciacion"`;
+    pool.getConnection(function (err, connection) {
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                console.log(results);
+                res.json(results);
+            } else {
+                res.send('No hay resultados');
+            }
+        });
+    })
+});
+
+app.get('/cursos/medio', (req, res) => {
+    const sql = `Select * from cursos WHERE nivel = "medio"`;
+    pool.getConnection(function (err, connection) {
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                console.log(results);
+                res.json(results);
+            } else {
+                res.send('No hay resultados');
+            }
+        });
+    })
+});
+
+app.get('/cursos/avanzado', (req, res) => {
+    const sql = `Select * from cursos WHERE nivel = "avanzado"`;
+    pool.getConnection(function (err, connection) {
+        connection.query(sql, (error, results) => {
+            if (error) throw error;
+            if (results.length > 0) {
+                console.log(results);
+                res.json(results);
+            } else {
+                res.send('No hay resultados');
+            }
+        });
+    })
+});
+
 
 // Product for id
 app.get('/productos/:id', (req, res) => {
