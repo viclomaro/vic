@@ -10,7 +10,7 @@ export class ProductosService {
   baseUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = 'http://localhost:3000/api/productos';
+    this.baseUrl = 'https://givemephotoback.herokuapp.com/productos';
   }
 
 

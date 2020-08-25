@@ -46,6 +46,7 @@ export class ProductosComponent implements OnInit {
       this.activatedRoute.params.subscribe(async params => {
         if (!params.categoria) {
           this.productos = await this.productosService.getAll();
+          console.log(this.productos)
         } else {
           this.productos = await this.productosService.getByCategoria(params.categoria);
         }
@@ -66,7 +67,7 @@ export class ProductosComponent implements OnInit {
 
 
   // Borrar filtrado del cuestionario
-  async  borrarCuestionario() {
+  async borrarCuestionario() {
     localStorage.removeItem('cuestionario');
     this.productos = await this.productosService.getAll();
     this.mostrarBorrarCuestionario = false;
