@@ -7,6 +7,14 @@
 
     <div class="tituloTiempo mt-5 text-center">
         <h3>El tiempo en tu ubicación actualmente es:</h3>
+        <div class="datos mt-3">
+            <p>Si miras al cielo estará {{this.arrWeather?.day1.text}}</p>
+            <p>La temperatura máxima será de {{this.arrWeather?.day1.temperature_max}}º</p>
+            <p>La temperatura mínima será de {{this.arrWeather?.day1.temperature_min}}º</p>
+            <p>Hay una humedad del {{this.arrWeather?.day1.humidity}}%</p>
+        </div>
+
+
     </div>
 
 </div>
