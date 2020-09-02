@@ -3,14 +3,13 @@
         <h1 class=" mt-5">
             ¿Qué me pongo hoy?
         </h1>
-        <p>{{this.arrWeather?.day1.date}}</p>
+        <img src="../../assets/images/clothes/perchero.png" class="image-titulo mt-3" alt="perchero image">
     </div>
 
     <div class="tituloTiempo mt-5 text-center">
-        <h3>El tiempo en tu ubicación actualmente es:</h3>
         <div class="datos mt-3">
-            <p>Si miras al cielo estará {{this.arrWeather?.day1.text}}
-                <img src="https://v5i.tutiempo.net/wi/02/50/2n.png" alt=""></p>
+            <h3>Si miras al cielo estará {{this.arrWeather?.day1.text}}</h3>
+            <img src="https://v5i.tutiempo.net/wi/02/50/{{this.arrWeather?.day1.icon}}.png" alt="">
             <p>La temperatura máxima será de {{this.arrWeather?.day1.temperature_max}}º</p>
             <p>La temperatura mínima será de {{this.arrWeather?.day1.temperature_min}}º</p>
             <p>Hay una humedad del {{this.arrWeather?.day1.humidity}}%</p>
