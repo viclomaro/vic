@@ -2,17 +2,53 @@
     <div class="titulo text-center">
         <h1 class=" mt-5">
             ¿Qué me pongo hoy?
+            <img src="../../assets/images/clothes/perchero.png" class="image-titulo mt-3" alt="perchero image">
         </h1>
-        <img src="../../assets/images/clothes/perchero.png" class="image-titulo mt-3" alt="perchero image">
     </div>
+
+    <div
+        *ngIf="this.arrWeather?.day1.temperature_max > 25 && this.arrWeather?.day1.temperature_max < 30 && this.arrWeather?.day1.temperature_min > 10 && this.arrWeather?.day1.temperature_min < 15">
+        <div class="row text-center mt-5">
+            <div class="col-6">
+                <img src="../../assets/images/women/women spring1 spr.jpg" class="clothes mt-3" alt="women spring1">
+            </div>
+            <div class="col-6">
+                <img src="../../assets/images/men/men spring spr.jpg" class="clothes mt-3" alt="men spring">
+            </div>
+        </div>
+    </div>
+
+    <div
+        *ngIf="this.arrWeather?.day1.temperature_max > 30 && this.arrWeather?.day1.temperature_max < 35 && this.arrWeather?.day1.temperature_min > 20 && this.arrWeather?.day1.temperature_min < 25">
+        <div class="row text-center mt-5">
+            <div class="col-6">
+                <img src="../../assets/images/women/women spring3 spr.jpg" class="clothes mt-3" alt="women spring3">
+            </div>
+            <div class="col-6">
+                <img src="../../assets/images/men/men spring 3 spr.jpg" class="clothes mt-3" alt="men spring3">
+            </div>
+        </div>
+    </div>
+
+    <div
+        *ngIf="this.arrWeather?.day1.temperature_max > 20 && this.arrWeather?.day1.temperature_max < 25 && this.arrWeather?.day1.temperature_min > 5 && this.arrWeather?.day1.temperature_min < 10">
+        <div class="row text-center mt-5">
+            <div class="col-6">
+                <img src="../../assets/images/women/women spring2 spr.jpg class=" clothes mt-3" alt="women spring2">
+            </div>
+            <div class="col-6">
+                <img src="../../assets/images/men/men spring 2 spr.jpg" class="clothes mt-3" alt="men spring2">
+            </div>
+        </div>
+    </div>
+
 
     <div class="tituloTiempo mt-5 text-center">
         <div class="datos mt-3">
-            <h3>Si miras al cielo estará {{this.arrWeather?.day1.text}}</h3>
-            <img src="https://v5i.tutiempo.net/wi/02/50/{{this.arrWeather?.day1.icon}}.png" alt="">
-            <p>La temperatura máxima será de {{this.arrWeather?.day1.temperature_max}}º</p>
-            <p>La temperatura mínima será de {{this.arrWeather?.day1.temperature_min}}º</p>
-            <p>Hay una humedad del {{this.arrWeather?.day1.humidity}}%</p>
+            <h3>{{this.arrWeather?.day1.text}}</h3>
+            <p>{{this.arrWeather?.day1.temperature_max}}º</p><img
+                src="https://v5i.tutiempo.net/wi/02/50/{{this.arrWeather?.day1.icon}}.png" alt="">
+            <p>{{this.arrWeather?.day1.temperature_min}}º</p>
         </div>
     </div>
 
