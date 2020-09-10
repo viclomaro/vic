@@ -16,18 +16,15 @@ export class HomeComponent implements OnInit {
   temp: number;
   dirWoman: string;
   dirMan: string;
-  urlIcon: string;
-  icon: string;
+  getIcon: string;
 
   constructor(private ApiService: ApiService) {
     this.dirWoman = "../../assets/images/women/";
     this.dirMan = "../../assets/images/men/";
-    this.urlIcon = "https://v5i.tutiempo.net/wi/02/50/";
   }
 
   ngOnInit() {
     this.getWeather();
-
   }
 
   async getWeather() {
@@ -51,8 +48,9 @@ export class HomeComponent implements OnInit {
 
 
   setFormattedUrlIcon(): void {
-    this.icon = this.arrWeather?.day1.icon;
-    this.urlIcon = `${this.urlIcon}${this.icon}.png`;
+    const icon = this.arrWeather.day1.icon;
+    const urlIcon = "https://v5i.tutiempo.net/wi/02/50/";
+    this.getIcon = `${urlIcon}${icon}.png`;
   }
 
   setTempValue(): void {
