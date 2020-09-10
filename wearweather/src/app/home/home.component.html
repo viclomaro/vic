@@ -6,39 +6,13 @@
         </h1>
     </div>
 
-    <div
-        *ngIf="this.arrWeather?.day1.temperature_max > 25 && this.arrWeather?.day1.temperature_max < 30 && this.arrWeather?.day1.temperature_min > 10 && this.arrWeather?.day1.temperature_min < 15">
-        <div class="row text-center mt-5">
-            <div class="col-6">
-                <img src="../../assets/images/women/women spring1 spr.jpg" class="clothes mt-3" alt="women spring1">
-            </div>
-            <div class="col-6">
-                <img src="../../assets/images/men/men spring spr.jpg" class="clothes mt-3" alt="men spring">
-            </div>
-        </div>
-    </div>
 
-    <div
-        *ngIf="this.arrWeather?.day1.temperature_max > 30 && this.arrWeather?.day1.temperature_max < 35 && this.arrWeather?.day1.temperature_min > 20 && this.arrWeather?.day1.temperature_min < 25">
-        <div class="row text-center mt-5">
-            <div class="col-6">
-                <img src="../../assets/images/women/women spring3 spr.jpg" class="clothes mt-3" alt="women spring3">
-            </div>
-            <div class="col-6">
-                <img src="../../assets/images/men/men spring 3 spr.jpg" class="clothes mt-3" alt="men spring3">
-            </div>
+    <div class="row text-center mt-5">
+        <div class="col-6">
+            <img src={{imgWoman}} class="clothes mt-3" alt="women spring1">
         </div>
-    </div>
-
-    <div
-        *ngIf="this.arrWeather?.day1.temperature_max > 20 && this.arrWeather?.day1.temperature_max < 25 && this.arrWeather?.day1.temperature_min > 5 && this.arrWeather?.day1.temperature_min < 10">
-        <div class="row text-center mt-5">
-            <div class="col-6">
-                <img src="../../assets/images/women/women spring2 spr.jpg class=" clothes mt-3" alt="women spring2">
-            </div>
-            <div class="col-6">
-                <img src="../../assets/images/men/men spring 2 spr.jpg" class="clothes mt-3" alt="men spring2">
-            </div>
+        <div class="col-6">
+            <img src={{imgMan}} class="clothes mt-3" alt="men spring">
         </div>
     </div>
 
