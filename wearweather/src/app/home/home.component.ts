@@ -36,16 +36,15 @@ export class HomeComponent implements OnInit {
     this.setTemperatures();
     // get temperature 
     this.setTempValue();
+    // set img by tempValue
     this.setWeatherTemp();
 
   }
-
 
   setTemperatures(): void {
     this.tempMax = this.arrWeather?.day1.temperature_max;
     this.tempMin = this.arrWeather?.day1.temperature_min;
   }
-
 
   setFormattedUrlIcon(): void {
     const icon = this.arrWeather.day1.icon;
@@ -65,7 +64,6 @@ export class HomeComponent implements OnInit {
     this.imgWoman = `${this.dirWoman}${tempFirstNumber}${imageNumber}.jpg`;
     this.imgMan = `${this.dirMan}${tempFirstNumber}${imageNumber}.jpg`;
   }
-
 
 }
 
