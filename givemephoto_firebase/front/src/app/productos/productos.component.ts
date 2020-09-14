@@ -20,7 +20,8 @@ export class ProductosComponent implements OnInit {
   mostrarFiltroPrecio: boolean;
   mostrarDeshacerFiltro: boolean;
   mostrarCaracteristicas: boolean;
-
+  cargando: boolean;
+  mostrarProductos: boolean;
 
   constructor(private productosService: ProductosService, private activatedRoute: ActivatedRoute, private router: Router, private carritoService: CarritoService) {
     this.productos = new Array<any>();
@@ -31,7 +32,8 @@ export class ProductosComponent implements OnInit {
     this.mostrarFiltroPrecio = false;
     this.mostrarDeshacerFiltro = false;
     this.mostrarCaracteristicas = false;
-
+    this.cargando = true;
+    this.mostrarProductos = false;
   }
 
 
@@ -44,13 +46,14 @@ export class ProductosComponent implements OnInit {
     } else {
       // Obtener todos los productos o filtrados por categoria
       this.activatedRoute.params.subscribe(async params => {
+
         if (!params.categoria) {
           this.productos = await this.productosService.getAll();
-          console.log(this.productos)
         } else {
           this.productos = await this.productosService.getByCategoria(params.categoria);
         }
-
+        this.cargando = this.productos.length > 0 ? false : true;
+        this.mostrarProductos = this.productos.length > 0 ? true : false;
       });
     }
 
