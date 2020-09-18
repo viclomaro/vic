@@ -1,5 +1,19 @@
 .img img{
-    width: 75%;
+    width: 100%;
     height: auto;
     border-radius: 60%;
+    margin-top: 4em;
+}
+
+.container .row .tituloTiempo .iconImg{
+    width: 50%;
+    height: auto;
+}
+
+.container .row .tituloTiempo .hotTemp{
+    color: red;
+}
+
+.container .row .tituloTiempo .coldTemp{
+    color: blue;
 }
