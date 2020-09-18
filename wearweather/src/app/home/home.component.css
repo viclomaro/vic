@@ -3,3 +3,18 @@
     height: auto;
     border-radius: 60%;
 }
+
+.container .row .tituloTiempo .iconImg{
+    width: 50%;
+    height: auto;
+}
+
+.container .row .tituloTiempo .hotTemp{
+    font-size: 1.5em;
+    color: red;
+}
+
+.container .row .tituloTiempo .coldTemp{
+    font-size: 1.5em;
+    color: blue;
+}
