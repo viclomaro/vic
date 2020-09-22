@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../blog.service';
-import { Post } from '../models/post';
+import { BlogService } from '../../services/blog.service';
+import { Post } from '../../models/post';
 import { Router, NavigationEnd } from '@angular/router';
 
 
