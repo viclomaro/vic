@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ProductosService } from '../productos.service';
+import { ProductosService } from '../../services/productos.service';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { CarritoService } from '../carrito.service';
+import { CarritoService } from '../../services/carrito.service';
 
 @Component({
   selector: 'app-productos',

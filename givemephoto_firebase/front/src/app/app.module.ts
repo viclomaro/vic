@@ -5,16 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination'
 
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from '../app/routes/app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './main/main.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { BlogComponent } from './blog/blog.component';
-import { RegistroComponent } from './registro/registro.component';
-import { ProductosComponent } from './productos/productos.component';
-import { CarritoComponent } from './carrito/carrito.component';
-import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
-import { UserComponent } from './user/user.component';
+import { MainComponent } from './components/main/main.component';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
+import { DetalleCursoComponent } from './components/detalle-curso/detalle-curso.component';
+import { UserComponent } from './components/user/user.component';
 
 
 

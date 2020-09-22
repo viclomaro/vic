@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { RegistroComponent } from './registro/registro.component';
-import { BlogComponent } from './blog/blog.component';
-import { ProductosComponent } from './productos/productos.component';
-import { CarritoComponent } from './carrito/carrito.component';
-import { DetalleCursoComponent } from './detalle-curso/detalle-curso.component';
-import { UserComponent } from './user/user.component';
-import { LoginGuard } from './login.guard';
+import { MainComponent } from '../components/main/main.component';
+import { CursosComponent } from '../components/cursos/cursos.component';
+import { RegistroComponent } from '../components/registro/registro.component';
+import { BlogComponent } from '../components/blog/blog.component';
+import { ProductosComponent } from '../components/productos/productos.component';
+import { CarritoComponent } from '../components/carrito/carrito.component';
+import { DetalleCursoComponent } from '../components/detalle-curso/detalle-curso.component';
+import { UserComponent } from '../components/user/user.component';
+import { LoginGuard } from '../login.guard';
 
 
 const routes: Routes = [

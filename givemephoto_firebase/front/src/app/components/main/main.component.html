@@ -18,7 +18,7 @@
                 </h2>
             </div>
             <div class="col-12 col-md-6">
-                <img src="../../assets/images/home/main.jpg" alt="">
+                <img class="imagen" src="../../assets/images/home/main.jpg" alt="">
             </div>
             <div class="col-12 col-md-6 section-productos">
                 <h3>¿Qué cámara me compro?</h3>
@@ -42,7 +42,7 @@
                 <h2>¿Necesitas ayuda para encontrar tu cámara?</h2>
                 <p>Utiliza nuestro filtro para ajustar tu búsqueda</p>
             </div>
-            <div class="col-12">
+            <div class="col-12 col-xs-1">
                 <table class="table text-center">
                     <tbody>
                         <tr>
@@ -72,7 +72,8 @@
 
                 <input value="Ver resultado" type="button" class="btn btn-dark btn-lg btn-block"
                     (click)="manejarResultado()">
-                <p *ngIf="mostrarNoResultados" class="no-result text-center">No hay ningún resultado para esta búsqueda
+                <p *ngIf="mostrarNoResultados" class="no-result text-center">No hay ningún resultado para esta
+                    búsqueda
                 </p>
             </div>
         </div>
@@ -95,13 +96,14 @@
                 <p class="texto">Fotografiar es algo más que hacer una buena foto. En los cursos aprenderás a
                     seleccionar y secuenciar tus fotografías, a contar historias con tus imágenes y a expresarte a
                     través de la cámara. Conocerás personas que comparten tu pasión
-                    por la fotografía, en un entorno especialmente pensado para ayudarte a desarrollar tu creatividad.
+                    por la fotografía, en un entorno especialmente pensado para ayudarte a desarrollar tu
+                    creatividad.
                 </p>
                 <button class="btn boton-primario" [routerLink]="['/cursos']">Ir a Cursos</button>
 
             </div>
             <div class="col-12 col-md-6">
-                <img src="../../assets/images/home/pies.png" alt="">
+                <img class="imagen" src="../../assets/images/home/pies.png" alt="">
             </div>
 
         </div>
@@ -117,8 +119,10 @@
                 <h2>
                     <span class="ion-minus"></span>Blog Posts<span class="ion-minus"></span>
                 </h2>
-                <p>Emociones, sensaciones, motivaciones para escribir, son algunas de las características de este blog.
-                    Que seguramente te servirán de inspiración, y te animarán a llevar tu cámara al hombro allí hacía
+                <p>Emociones, sensaciones, motivaciones para escribir, son algunas de las características de este
+                    blog.
+                    Que seguramente te servirán de inspiración, y te animarán a llevar tu cámara al hombro allí
+                    hacía
                     donde te dirijas. </p><br>
             </div>
         </div>
@@ -142,7 +146,8 @@
                                     </div>
                                     <div class="card-block">
                                         <h4 class="card-title">21 lugares recomendados por fotógrafos.</h4>
-                                        <p class="card-text">Descubre los lugares más sorprendentes y por ello los más fotografiados sin salir de casa.<br>
+                                        <p class="card-text">Descubre los lugares más sorprendentes y por ello los
+                                            más fotografiados sin salir de casa.<br>
                                             ¡No puede ser más barato!.</p>
                                         <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
                                             leyendo</button>
@@ -157,8 +162,10 @@
                                             width="100%">
                                     </div>
                                     <div class="card-block">
-                                        <h4 class="card-title">Pierde el miedo al uso de tripode para tus fotografías.</h4>
-                                        <p class="card-text">Con el uso del tripode podrás obtener mejores resultados sin necesidad de cargar con la cámara.</p>
+                                        <h4 class="card-title">Pierde el miedo al uso de tripode para tus
+                                            fotografías.</h4>
+                                        <p class="card-text">Con el uso del tripode podrás obtener mejores
+                                            resultados sin necesidad de cargar con la cámara.</p>
 
                                         <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
                                             leyendo</button>
@@ -172,7 +179,8 @@
                                         width="100%">
                                     <div class="card-block">
                                         <h4 class="card-title">Los resultados de la fotografía macro.</h4>
-                                        <p class="card-text">Descubrir hasta el mínimo detalle de todo lo que puedas imaginar está al alcance de tu cámara.</p>
+                                        <p class="card-text">Descubrir hasta el mínimo detalle de todo lo que puedas
+                                            imaginar está al alcance de tu cámara.</p>
                                         <button class="btn boton-primario" href="#" [routerLink]="['/blog']">Seguir
                                             leyendo</button>
                                     </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { CursosService } from '../cursos.service';
+import { CursosService } from '../../services/cursos.service';
 
 
 @Component({
