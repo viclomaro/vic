@@ -1,30 +1,39 @@
 GET http://localhost:3000/api/proyectos
-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTU4ODc0LCJleHBpcmVkQXQiOjE2MDE1NTkxNzR9.WQIwgpxNf1xtRcuR2NGuWL4ZvZ9awskuiQ6oVHQbKjI
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwMDczLCJleHBpcmVkQXQiOjE2MDE1NjAzNzN9.zfVsjLaj_Tx6-0N92BriQ-FKTxzDWJ1CGQM80yLosGc
+
+###
+
+GET http://localhost:3000/api/proyectos/angular
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwNTQ5LCJleHBpcmVkQXQiOjE2MDE1NjIzNDl9.wrA_zbRpFRKp2EsswuK6lw7cByVltxkhcKCBXRS0t7c
 
 ###
 
 POST http://localhost:3000/api/proyectos
 Content-Type: application/json
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwMDczLCJleHBpcmVkQXQiOjE2MDE1NjAzNzN9.zfVsjLaj_Tx6-0N92BriQ-FKTxzDWJ1CGQM80yLosGc
 
 {
     "titulo": "Proyecto de json",
     "descripcion": "Esta es la descripcion",
     "url": "http://www.google.es",
     "cliente": "Google",
-    "url_cliente": "http://www.google.es/quien-somos"
+    "url_cliente": "http://www.google.es/quien-somos",
+    "categoria": "angular"
 }
 
 ###
 
 PUT http://localhost:3000/api/proyectos/5f75c07c338b172ce43e60ad
 Content-Type: application/json
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwMDczLCJleHBpcmVkQXQiOjE2MDE1NjAzNzN9.zfVsjLaj_Tx6-0N92BriQ-FKTxzDWJ1CGQM80yLosGc
 
 {
-    "titulo": "Proyecto editado 7",
-    "descripcion": "Esta es la descripcion editada",
+    "titulo": "cvweb",
+    "descripcion": "prueba categoria",
     "url": "http://www.google.es",
     "cliente": "Google",
-    "url_cliente": "http://www.google.es/quien-somos"
+    "url_cliente": "http://www.google.es/quien-somos",
+    "categoria": "angular"
 }
 
 ###
@@ -38,7 +47,11 @@ GET http://localhost:3000/api/token
 
 ### PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/proyectos
-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTU5NTQ3LCJleHBpcmVkQXQiOjE2MDE1NTk4NDd9.1tJ5okVJ6y8UUNU4LaL621dmCER5e637RpfeoKALEyA
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwODQwLCJleHBpcmVkQXQiOjE2MDE1NjI2NDB9.AEefFSS9CR8C502wI-gCHWGuR3UWc6bCx7X5oYG648o
 
 ###
 GET https://mycvbackapp.herokuapp.com/api/token
+
+###
+GET https://mycvbackapp.herokuapp.com/api/proyectos/angular
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwODQwLCJleHBpcmVkQXQiOjE2MDE1NjI2NDB9.AEefFSS9CR8C502wI-gCHWGuR3UWc6bCx7X5oYG648o

@@ -3,6 +3,7 @@ const { check, validationResult } = require('express-validator');
 
 const Proyecto = require('../../models/proyecto');
 
+//Obtener proyectos
 router.get('/', async (req, res) => {
     try {
         const proyectos = await Proyecto.find();
@@ -12,6 +13,18 @@ router.get('/', async (req, res) => {
     }
 });
 
+//Obtener proyectos por categoria
+router.get('/:categoria', async (req, res) => {
+    try {
+        const proyectos = await Proyecto.find({ categoria: req.params.categoria });
+        res.json(proyectos);
+    } catch (err) {
+        res.status(503).json({ 'err': err });
+    }
+
+})
+
+//Crear proyecto
 router.post('/', [
     check('titulo', 'El titulo debe incluirse en la petición')
         .exists(),
@@ -35,6 +48,7 @@ router.post('/', [
     }
 });
 
+//Editar proyecto
 router.put('/:proyectoId', async (req, res) => {
     try {
         const proyectoEditado = await Proyecto.findByIdAndUpdate(req.params.proyectoId, req.body, { new: true });
@@ -45,6 +59,7 @@ router.put('/:proyectoId', async (req, res) => {
 
 })
 
+//Borrar proyecto
 router.delete('/:proyectoId', async (req, res) => {
     try {
         const proyectoBorrado = await Proyecto.findByIdAndDelete(req.params.proyectoId);
