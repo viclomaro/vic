@@ -18,6 +18,10 @@ exports.checkToken = (req, res, next) => {
         return res.status(403).json({ error: 'El token ha expirado' });
     }
 
+    if (payload.usuario !== 'Victor') {
+        return res.status(403).json({ error: 'El usuario es incorrecto' });
+    }
+
     req.payload = payload;
 
     next();

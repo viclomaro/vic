@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const urlMongo = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.pkuzs.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
+const urlMongo = process.env.MONGO_URL;
 
 const config = {
     useNewUrlParser: true,

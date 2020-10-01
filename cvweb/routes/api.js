@@ -14,7 +14,6 @@ router.get('/token', (req, res) => {
         expiredAt: moment().add(5, 'minutes').unix()
     };
     const token = jwt.encode(payload, process.env.SECRET_KEY);
-    console.log(token);
     res.json({ token });
 });
 
