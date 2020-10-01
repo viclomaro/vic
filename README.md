@@ -6,7 +6,7 @@ En este repositorio trabajo sobre proyectos propios, tanto para poner en prácti
 ## Proyectos:
 
 ### CvWeb:
-Desarrollo de currículum web sobre Node.JS - Express con vistas (ejs) para la creación del CRUD y front desarrollado con React.
+Desarrollo de currículum web sobre Node.JS - Express con vistas (HBS) para la creación del CRUD y front desarrollado con React.
 
 #### DuoChat:
 Desarrollo de aplicación sobre Javascript nativo (vainilla), realizada con servicios de firebase, incluida una bbdd para el almacenamiento de mensajes (firestore) y desplegada
