@@ -1,4 +1,5 @@
 GET http://localhost:3000/api/proyectos
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTU4NDUwLCJleHBpcmVkQXQiOjE2MDE1NTg3NTB9.3kg1diZxU-yGGG8UuW5MtZ0fTLwsMrLwLbKBomdL7Ls
 
 ###
 
@@ -19,7 +20,7 @@ PUT http://localhost:3000/api/proyectos/5f75c07c338b172ce43e60ad
 Content-Type: application/json
 
 {
-    "titulo": "Proyecto editado 6",
+    "titulo": "Proyecto editado 7",
     "descripcion": "Esta es la descripcion editada",
     "url": "http://www.google.es",
     "cliente": "Google",
@@ -28,4 +29,8 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:3000/api/proyectos/5f75c07e338b172ce43e60ae
+DELETE http://localhost:3000/api/proyectos/5f75d1d038de973280125808
+
+###
+
+GET http://localhost:3000/api/token
