@@ -1,12 +1,17 @@
 GET http://localhost:3000/api/proyectos
-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwMDczLCJleHBpcmVkQXQiOjE2MDE1NjAzNzN9.zfVsjLaj_Tx6-0N92BriQ-FKTxzDWJ1CGQM80yLosGc
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYxNDAwLCJleHBpcmVkQXQiOjE2MDE1NjMyMDB9.aPHOca9VnQEJFIWjBGftfrfGWK6yO3q8m8OD1FaNQpY
 
-###
+### PROYECTO/ID
 
-GET http://localhost:3000/api/proyectos/angular
+GET http://localhost:3000/api/proyectos/5f75c07c338b172ce43e60ad
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYxNDAwLCJleHBpcmVkQXQiOjE2MDE1NjMyMDB9.aPHOca9VnQEJFIWjBGftfrfGWK6yO3q8m8OD1FaNQpY
+
+### PROYECTO/CATEGORIA
+
+GET http://localhost:3000/api/proyectos/categoria/angular
 access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwNTQ5LCJleHBpcmVkQXQiOjE2MDE1NjIzNDl9.wrA_zbRpFRKp2EsswuK6lw7cByVltxkhcKCBXRS0t7c
 
-###
+### CREAR PROYECTO
 
 POST http://localhost:3000/api/proyectos
 Content-Type: application/json
@@ -21,7 +26,7 @@ access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY
     "categoria": "angular"
 }
 
-###
+### EDITAR PROYECTO
 
 PUT http://localhost:3000/api/proyectos/5f75c07c338b172ce43e60ad
 Content-Type: application/json
@@ -36,22 +41,22 @@ access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY
     "categoria": "angular"
 }
 
-###
+### BORRAR PROYECTO
 
 DELETE http://localhost:3000/api/proyectos/5f75d1d038de973280125808
 
-###
+### CREAR TOKEN
 
 GET http://localhost:3000/api/token
 
 
-### PRODUCCIÓN
+### OBTENER PROYECTOS PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/proyectos
 access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwODQwLCJleHBpcmVkQXQiOjE2MDE1NjI2NDB9.AEefFSS9CR8C502wI-gCHWGuR3UWc6bCx7X5oYG648o
 
-###
+### CREAR TOKEN PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/token
 
-###
+### PROYECTO/CATEGORIA PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/proyectos/angular
 access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwODQwLCJleHBpcmVkQXQiOjE2MDE1NjI2NDB9.AEefFSS9CR8C502wI-gCHWGuR3UWc6bCx7X5oYG648o

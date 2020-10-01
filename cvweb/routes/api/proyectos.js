@@ -14,15 +14,24 @@ router.get('/', async (req, res) => {
 });
 
 //Obtener proyectos por categoria
-router.get('/:categoria', async (req, res) => {
+router.get('/categoria/:categoria', async (req, res) => {
     try {
         const proyectos = await Proyecto.find({ categoria: req.params.categoria });
         res.json(proyectos);
     } catch (err) {
         res.status(503).json({ 'err': err });
     }
+});
 
-})
+//Obtener un proyecto
+router.get('/:idProyecto', async (req, res) => {
+    try {
+        const proyecto = await Proyecto.findById(req.params.idProyecto);
+        res.json(proyecto);
+    } catch (err) {
+        res.status(503).json({ 'err': err });
+    }
+});
 
 //Crear proyecto
 router.post('/', [
@@ -56,8 +65,7 @@ router.put('/:proyectoId', async (req, res) => {
     } catch (err) {
         res.status(503).json({ 'err': err })
     }
-
-})
+});
 
 //Borrar proyecto
 router.delete('/:proyectoId', async (req, res) => {
@@ -67,6 +75,6 @@ router.delete('/:proyectoId', async (req, res) => {
     } catch (err) {
         res.status(503).json({ 'error': err });
     }
-})
+});
 
 module.exports = router;
