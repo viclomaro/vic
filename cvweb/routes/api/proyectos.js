@@ -36,8 +36,13 @@ router.post('/', [
 });
 
 router.put('/:proyectoId', async (req, res) => {
-    const proyectoEditado = await Proyecto.findByIdAndUpdate(req.params.proyectoId, req.body, { new: true });
-    res.json(proyectoEditado);
+    try {
+        const proyectoEditado = await Proyecto.findByIdAndUpdate(req.params.proyectoId, req.body, { new: true });
+        res.json(proyectoEditado);
+    } catch (err) {
+        res.status(503).json({ 'err': err })
+    }
+
 })
 
 router.delete('/:proyectoId', async (req, res) => {

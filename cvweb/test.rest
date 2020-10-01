@@ -19,7 +19,7 @@ PUT http://localhost:3000/api/proyectos/5f75c07c338b172ce43e60ad
 Content-Type: application/json
 
 {
-    "titulo": "Proyecto editado 5",
+    "titulo": "Proyecto editado 6",
     "descripcion": "Esta es la descripcion editada",
     "url": "http://www.google.es",
     "cliente": "Google",
