@@ -1,28 +1,28 @@
 <h4>Nuevo proyecto</h4>
-<form action="/proyectos/create" method="POST" enctype="multipart/form-data" <div class="form-group">
+<form action="/proyectos/update" method="POST" enctype="multipart/form-data" <div class="form-group">
     <div class="form-group">
         <label>Titulo</label>
-        <input type="text" name="titulo" id="" class="form-control">
+        <input type="text" name="titulo" id="" class="form-control" value="{{proy.titulo}}">
     </div>
     <div class="form-group">
         <label>Descripción</label>
-        <input type="text" name="descripcion" id="" class="form-control">
+        <input type="text" name="descripcion" id="" class="form-control" value="{{proy.descripcion}}">
     </div>
-    <div class="form-group">
+    <div class=" form-group">
         <label>Url</label>
-        <input type="text" name="url" id="" class="form-control">
+        <input type="text" name="url" id="" class="form-control"  value="{{proy.url}}">
     </div>
     <div class="form-group">
         <label>Cliente</label>
-        <input type="text" name="cliente" id="" class="form-control">
+        <input type="text" name="cliente" id="" class="form-control"  value="{{proy.cliente}}">
     </div>
     <div class="form-group">
         <label>Url Cliente</label>
-        <input type="text" name="url_cliente" id="" class="form-control">
+        <input type="text" name="url_cliente" id="" class="form-control"  value="{{proy.url_cliente}}">
     </div>
     <div class="form-group">
         <label>Categoria</label>
-        <select name="categoria" class="form-control">
+        <select name="categoria" class="form-control"  value="{{proy.categoria}}">
             <option value="angular">Angular</option>
             <option value="react">React</option>
             <option value="nodejs">NodeJs</option>

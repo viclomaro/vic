@@ -1,13 +1,21 @@
 const router = require('express').Router();
 const { check, validationResult } = require('express-validator');
+const proyecto = require('../../models/proyecto');
 
 const Proyecto = require('../../models/proyecto');
 
 //Obtener proyectos
 router.get('/', async (req, res) => {
     try {
-        const proyectos = await Proyecto.find();
-        res.json(proyectos);
+        const proyectos = await Proyecto.find().lean();
+        const arrMap = proyectos.map(proyecto => {
+            if (proyecto.imagen) {
+                console.log(proyecto.imagen.indexOf('/'));
+            }
+            let imagen = proyecto.imagen ? proyecto.imagen.substring(proyecto.imagen.indexOf('/') + 8) : '';
+            return { ...proyecto, imagen: imagen }
+        })
+        res.json(arrMap);
     } catch (err) {
         res.status(503).json({ 'err': err });
     }
