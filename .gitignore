@@ -3,3 +3,4 @@ givemephoto_heroku/node_modules/
 nodejs/node_modules/
 cvweb/node_modules/
 cvweb/.env
+cvweb/back/node_modules/
