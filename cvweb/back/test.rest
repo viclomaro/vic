@@ -1,5 +1,5 @@
 GET http://localhost:3000/api/proyectos
-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNzI1MTcyLCJleHBpcmVkQXQiOjE2MDE3MjY5NzJ9.VulNvgne-_5oVG5V0RxLp-ws939NVa707Ll6sx9-mlM
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxOTE0MDg2LCJleHBpcmVkQXQiOjE2MDE5MTU4ODZ9.idIC9ZJZ8mN0T2ST21UUwAAxLvwwE_mRuZFlcqF_10o
 
 ### PROYECTO/ID
 

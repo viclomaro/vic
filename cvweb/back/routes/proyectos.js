@@ -15,18 +15,22 @@ router.get('/new', async (req, res) => {
 });
 
 router.get('/edit/:proyectoId', async (req, res) => {
-    //TODO hacer try catch
-    const proyecto = await Proyecto.findById(req.params.proyectoId).lean();
-    res.render('proyectos/formEdit', { proy: proyecto });
-}
-)
+    try {
+        const proyecto = await Proyecto.findById(req.params.proyectoId).lean();
+        res.render('proyectos/formEdit', { proy: proyecto });
+    } catch (err) {
+        res.json({ error: err });
+    }
+});
 
 router.post('/create', upload.single('imagen'), async (req, res) => {
 
-    const finalPath = req.file.path + '.' + mimeTypeExtension(req.file.mimetype);
-    fs.renameSync(req.file.path, finalPath);
+    if (req.file != undefined) {
+        const finalPath = req.file.path + '.' + mimeTypeExtension(req.file.mimetype);
+        fs.renameSync(req.file.path, finalPath);
+        req.body.imagen = finalPath;
+    }
 
-    req.body.imagen = finalPath;
     try {
         const proyecto = await Proyecto.create(req.body);
         res.redirect('/proyectos');
@@ -37,12 +41,14 @@ router.post('/create', upload.single('imagen'), async (req, res) => {
 });
 
 router.post('/update', upload.single('imagen'), async (req, res) => {
-    //TODO obtener categoria (helpers handlebars)    
-    const finalPath = req.file.path + '.' + mimeTypeExtension(req.file.mimetype);
-    fs.renameSync(req.file.path, finalPath);
-    console.log(req.file);
+    //TODO obtener categoria (helpers handlebars)
 
-    req.body.imagen = finalPath;
+    if (req.file != undefined) {
+        const finalPath = req.file.path + '.' + mimeTypeExtension(req.file.mimetype);
+        fs.renameSync(req.file.path, finalPath);
+        req.body.imagen = finalPath;
+    }
+
     try {
         await Proyecto.findByIdAndUpdate(req.body.proyectoId, req.body);
         res.redirect('/proyectos');
