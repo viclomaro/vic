@@ -52,7 +52,7 @@ GET http://localhost:3000/api/token
 
 ### OBTENER PROYECTOS PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/proyectos
-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAxNTYwODQwLCJleHBpcmVkQXQiOjE2MDE1NjI2NDB9.AEefFSS9CR8C502wI-gCHWGuR3UWc6bCx7X5oYG648o
+access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c3VhcmlvIjoiVmljdG9yIiwiY3JlYXRlZEF0IjoxNjAyNjg2NDA4LCJleHBpcmVkQXQiOjE2MDI2ODgyMDh9.6uSM_5JrRgHH0jF-1tqHu_Lf5uoMywKIRtz7GORJ3Mc
 
 ### CREAR TOKEN PRODUCCIÓN
 GET https://mycvbackapp.herokuapp.com/api/token
