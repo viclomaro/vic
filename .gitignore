@@ -4,3 +4,4 @@ nodejs/node_modules/
 cvweb/node_modules/
 cvweb/.env
 cvweb/back/node_modules/
+cvweb/front/node_modules/
