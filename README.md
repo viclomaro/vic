@@ -5,7 +5,7 @@ En este repositorio trabajo sobre proyectos propios, tanto para poner en prácti
 
 ## Proyectos:
 
-### Proyecto Crud
+### CrudProyect
 Desarrollo de CRUD en Angular, basado en creación de artistas y álbumes relacionados entre sí.
 
 ### CvWeb:
