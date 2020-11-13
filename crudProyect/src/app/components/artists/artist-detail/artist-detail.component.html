@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="artist">
+    <div class="card mt-3">
+      <img class="card-img-top" src="{{artist.photoUrl}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">{{artist.name}}</h3>
+        <p class="card-text">Since {{artist.birthdate | date}} to {{artist.deathDate | date}}</p>
+        <h5 class="card-title">Albums</h5>
+        <ul class="list-group list-group-flush" *ngFor="let album of albumList">
+          <li class="list-group-item" (click)="redirectToDetail(album._id)">{{album.title}}</li>
+        </ul>
+        <a class="btn btn-info mt-1" [routerLink]="['/']">Back to artist list</a>
+      </div>
+    </div>
+  </div>
+</div>

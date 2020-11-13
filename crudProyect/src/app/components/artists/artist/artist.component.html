@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="cardArtist mr-3" *ngFor="let singer of allArtist">
+            <div class="card mt-3">
+                <img src={{singer.photoUrl}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title text-center">{{singer.name}}</h4>
+                    <div class="buttons text-center">
+                        <a class="btn btn-success mr-1" [routerLink]="['/artistDetail', singer._id]">Detail</a>
+                        <a class="btn btn-warning mr-1" [routerLink]="['/editArtist', singer._id]">Edit</a>
+                        <a class="btn btn-danger" (click)="deleteArtist(singer._id)">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

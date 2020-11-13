@@ -1,0 +1,11 @@
+.card{
+    max-width: 40em;
+    height: auto;
+}
+.card img{
+    max-height: 30em;
+}
+
+.artist .card-body .list-group li{
+    cursor: pointer;
+}

@@ -1,0 +1,24 @@
+<div class="col-6 mx-auto mt-5 content">
+  <form [formGroup]="formArtist" (ngSubmit)="onSubmitArtist()">
+    <div class="form-group">
+      <label for="name">Artist name</label>
+      <input type="text" class="form-control" id="artistName" placeholder="Artist name" formControlName="name">
+      <p class="error" *ngIf="formArtist.controls.name.errors?.required && formArtist.controls.name.touched">
+        Field name is required
+      </p>
+    </div>
+    <div class="form-group">
+      <label for="photoUrl">Photo Url</label>
+      <input type="text" class="form-control" id="photoUrl" placeholder="Photo url" formControlName="photoUrl">
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Init year</label>
+      <input type="date" class="form-control" id="birthdate" formControlName="birthdate">
+    </div>
+    <div class="form-group">
+      <label for="deathDate">Finish year</label>
+      <input type="date" class="form-control" id="finishDate" formControlName="deathDate">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!formArtist.valid">Submit</button>
+  </form>
+</div>

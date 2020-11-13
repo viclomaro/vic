@@ -1,0 +1,9 @@
+.content{
+    border: 1px solid black;
+    border-radius: 5em;
+    padding: 3em;
+}
+
+.content .form-group p{
+    color: red;
+}

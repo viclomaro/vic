@@ -1,0 +1,21 @@
+<div class="col-6 mx-auto mt-3">
+    <form (ngSubmit)="onSubmitArtist()">
+      <div class="form-group">
+        <label for="name">Artist name</label>
+        <input type="text" name="name" class="form-control" id="artistName" placeholder="Artist name"  [(ngModel)]="artist.name">
+      </div>
+      <div class="form-group">
+        <label for="photoUrl">Photo Url</label>
+        <input type="text" name="photoUrl" class="form-control" id="photoUrl" placeholder="Photo url"  [(ngModel)]="artist.photoUrl">
+      </div>
+      <div class="form-group">
+        <label for="birthdate">Init year</label>
+        <input type="text"  name="birthdate" class="form-control" id="birthdate"  [(ngModel)]="artist.birthdate">
+      </div>
+      <div class="form-group">
+        <label for="deathDate">Finish year</label>
+        <input type="text" class="form-control"  name="deathDate" id="finishDate" f [(ngModel)]="artist.deathDate">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

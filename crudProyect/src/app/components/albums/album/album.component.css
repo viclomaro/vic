@@ -1,0 +1,11 @@
+.cardArtist .card{
+    min-width: 20em;
+    min-height: 10em;
+    max-width: 20em;
+    max-height: 30em;
+}
+
+.cardArtist .card img{
+    min-height: 10em;
+    max-height: 10em;
+}

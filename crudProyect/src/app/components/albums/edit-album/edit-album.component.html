@@ -1,0 +1,41 @@
+<div class="col-6 mx-auto mt-3">
+    <form (ngSubmit)="onSubmitAlbum()">
+        <div class="form-group">
+            <label for="title">Album title</label>
+            <input type="text" class="form-control" id="albumTitle" placeholder="Album title" name="title"
+                [(ngModel)]="album.title">
+        </div>
+        <div class="form-group">
+            <label for="artistId">Artist</label>
+            <select class="form-control" id="artistId" name="artistId" [(ngModel)]="album.artistId">
+                <option *ngFor="let artist of arrArtists" [ngValue]="artist._id">
+                    {{ artist.name }}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coverUrl">Cover Url</label>
+            <input type="text" class="form-control" id="coverUrl" placeholder="Cover Url" name="coverUrl"
+                [(ngModel)]="album.coverUrl">
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <select class="form-control" id="year" name="year" [(ngModel)]="album.year">
+                <option *ngFor="let year of arrYears">{{year}}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <select class="form-control" id="genre" name="genre" [(ngModel)]="album.genre">
+                <option *ngFor="let genre of arrGenre" [ngValue]="album.genre">{{genre}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="genre">If your genre isn´t in list, write new genre</label>
+            <input type="text" class="form-control" id="genre" placeholder="genre" name="genre"
+                [(ngModel)]="album.genre">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

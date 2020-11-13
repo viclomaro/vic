@@ -1,0 +1,17 @@
+<div class="albumDetail">
+  <div class="card mt-3 mx-auto">
+    <img class="card-img-top" src="{{album.coverUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <h3 class="card-title">{{album.title}}</h3>
+      <div class="card-text">
+        <p>Year: {{album.year}}</p>
+        <p>Genre: {{album.genre}}</p>
+      </div>
+      <div class="buttons text-center">
+        <a class="btn btn-warning mr-1" (click)="redirectToEdit(album._id)">Edit</a>
+        <a class="btn btn-danger mr-1" (click)="deleteAlbum(album._id)">Delete</a>
+      </div>
+    </div>
+    <a class="btn btn-success mr-1" [routerLink]="['/artistDetail', album.artistId]">Back to artist</a>
+  </div>
+</div>

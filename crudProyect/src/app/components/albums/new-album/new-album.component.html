@@ -1,0 +1,40 @@
+<div class="col-6 mx-auto mt-5 content">
+    <form [formGroup]="formAlbum" (ngSubmit)="onSubmitAlbum()">
+        <div class="form-group">
+            <label for="title">Album title</label>
+            <input type="text" class="form-control" id="albumTitle" placeholder="Album title" formControlName="title">
+            <p class="error" *ngIf="formAlbum.controls.title.errors?.required && formAlbum.controls.title.touched">
+                Field title is required
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="artistId">Artist</label>
+            <select class="form-control" id="artistId" formControlName="artistId">
+                <option *ngFor="let artist of arrArtists" [ngValue]="artist._id">
+                    {{ artist.name }}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coverUrl">Cover Url</label>
+            <input type="text" class="form-control" id="coverUrl" placeholder="Cover Url" formControlName="coverUrl">
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <select class="form-control" id="year" formControlName="year">
+                <option *ngFor="let year of arrYears">{{year}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <select class="form-control" id="genre" formControlName="genre">
+                <option *ngFor="let genre of arrGenre">{{genre}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="genre">If your genre isn´t in list, write new genre</label>
+            <input type="text" class="form-control" id="genre" placeholder="genre" formControlName="genre">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!formAlbum.valid">Submit</button>
+    </form>
+</div>
