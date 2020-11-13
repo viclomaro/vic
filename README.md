@@ -5,6 +5,9 @@ En este repositorio trabajo sobre proyectos propios, tanto para poner en prácti
 
 ## Proyectos:
 
+### Proyecto Crud
+Desarrollo de CRUD en Angular, basado en creación de artistas y álbumes relacionados entre sí.
+
 ### CvWeb:
 Desarrollo de currículum web sobre Node.JS - Express con vistas (HBS) para la creación del CRUD y front desarrollado con React.
 
