@@ -35,8 +35,8 @@ const pintarProductos = (data) => {
     contenedorProductos.appendChild(fragment);
 }
 
+// Boton añadir producto a carrito
 let carrito = {};
-
 const detectarBoton = (data) => {
     const boton = document.querySelectorAll('.card button');
 
@@ -45,11 +45,35 @@ const detectarBoton = (data) => {
             const producto = data.find(item => item.id === parseInt(btn.dataset.id));
             producto.cantidad = 1;
             if (carrito.hasOwnProperty(producto.id)) {
-                producto.cantidad++
+                producto.cantidad = carrito[producto.id].cantidad + 1;
             }
             carrito[producto.id] = { ...producto };
-            console.log(carrito);
+            pintarCarrito();
         })
     })
 }
+
+// Obtener productos del carrito
+const items = document.querySelector('#items');
+const pintarCarrito = () => {
+    items.innerHTML = '';
+    const template = document.querySelector('#template-carrito').content;
+    const fragment = document.createDocumentFragment();
+
+    Object.values(carrito).forEach(producto => {
+        template.querySelector('th').textContent = producto.id;
+        template.querySelectorAll('td')[0].textContent = producto.title;
+        template.querySelectorAll('td')[1].textContent = producto.cantidad;
+        template.querySelector('span').textContent = producto.precio * producto.cantidad;
+
+        const clone = template.cloneNode(true);
+        fragment.appendChild(clone);
+    })
+    items.appendChild(fragment);
+
+    pintarFooter();
+    accionBotones();
+}
+
+
 
