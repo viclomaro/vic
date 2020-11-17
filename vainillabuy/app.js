@@ -35,12 +35,21 @@ const pintarProductos = (data) => {
     contenedorProductos.appendChild(fragment);
 }
 
+let carrito = {};
+
 const detectarBoton = (data) => {
     const boton = document.querySelectorAll('.card button');
 
     boton.forEach(btn => {
         btn.addEventListener('click', () => {
-            console.log(btn.dataset);
+            const producto = data.find(item => item.id === parseInt(btn.dataset.id));
+            producto.cantidad = 1;
+            if (carrito.hasOwnProperty(producto.id)) {
+                producto.cantidad++
+            }
+            carrito[producto.id] = { ...producto };
+            console.log(carrito);
         })
     })
 }
+
