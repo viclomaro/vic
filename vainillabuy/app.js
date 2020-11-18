@@ -75,5 +75,31 @@ const pintarCarrito = () => {
     accionBotones();
 }
 
+const footer = document.querySelector('#footer-carrito');
+const pintarFooter = () => {
+
+    footer.innerHTML = '';
+
+    const template = document.querySelector('#template-footer').content;
+    const fragment = document.createDocumentFragment();
+
+    // Sumar cantidad y sumar totales
+    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0);
+    const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0);
+
+
+    template.querySelectorAll('td')[0].textContent = nCantidad;
+    template.querySelector('span').textContent = nPrecio;
+
+    const clone = template.cloneNode(true);
+    fragment.appendChild(clone);
+
+    footer.appendChild(fragment);
+}
+
+const accionBotones = () => {
+
+}
+
 
 
