@@ -23,10 +23,20 @@ if($_POST){
   $sentenciaAgregar->execute(array($tarea, $descripcion));
 
   // Refrescamos de nuevo la página
-  header('location:index.php');
+  //header('location:index.php');
 
 }
 
+
+if($_GET){
+  $id = $_GET['id'];
+  $sql_unico = 'SELECT * FROM tareas WHERE id=?';
+  $gsent_unico = $pdo->prepare($sql_unico);
+  $gsent_unico->execute(array($id));
+  $tareas_unico = $gsent_unico->fetch();
+
+  //var_dump($tareas_unico);
+}
 
 
 ?>
@@ -40,6 +50,8 @@ if($_POST){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <title>Todolist php</title>
   </head>
@@ -54,18 +66,38 @@ if($_POST){
                     <?php echo $tarea['tarea'] ?>
                     -
                     <?php echo $tarea['descripcion'] ?> 
+
+                    <a href="index.php?id=<?php echo $tarea['id'] ?>" class="float-right">
+                      <i class="fas fa-edit"></i>
+                    </a>
                 </div>
 
                 <?php endforeach ?>
           </div>
 
           <div class="col-md-6">
+              <?php if(!$_GET): ?>
+
               <h2>Añadir Tareas</h2>
               <form method="POST">
                 <input type="text" class="form-control" name="tarea" placeholder="Tarea">
                 <input type="text" class="form-control mt-3" name="descripcion" placeholder="Descripción">
                 <button class="btn btn-primary mt-3">Añadir</button>
               </form>
+
+              <?php endif ?>
+
+              <?php if($_GET): ?>
+
+              <h2>Editar Tareas</h2>
+              <form method="GET" action="editar.php">
+                <input type="text" class="form-control" name="tarea" placeholder="Tarea" value="<?php echo $tareas_unico['tarea'] ?>">
+                <input type="text" class="form-control mt-3" name="descripcion" placeholder="Descripción" value="<?php echo $tareas_unico['descripcion'] ?>">
+                <input type="text" class="d-none" name="id" value="<?php echo $tareas_unico['id'] ?>">
+                <button class="btn btn-primary mt-3">Añadir</button>
+              </form>
+
+              <?php endif ?>
           </div>
         </div>
     </div>
