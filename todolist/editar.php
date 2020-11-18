@@ -10,4 +10,6 @@ $sql_editar = 'UPDATE tareas SET tarea = ?, descripcion = ? WHERE id = ?';
 $sentendiaEditar = $pdo->prepare($sql_editar);
 $sentendiaEditar->execute(array($tarea, $descripcion, $id));
 
+header('location:index.php');
+
 ?>
