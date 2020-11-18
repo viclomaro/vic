@@ -8,7 +8,7 @@ const fetchData = async () => {
     try {
         const res = await fetch('api.json');
         const data = await res.json();
-        console.log(data);
+        
         pintarProductos(data);
         detectarBoton(data);
     } catch (error) {
@@ -23,7 +23,6 @@ const pintarProductos = (data) => {
     const fragment = document.createDocumentFragment();
 
     data.forEach(producto => {
-        console.log(producto);
         template.querySelector('img').setAttribute('src', producto.thumbnailUrl);
         template.querySelector('h5').textContent = producto.title;
         template.querySelector('p span').textContent = producto.precio;

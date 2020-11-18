@@ -2,6 +2,7 @@
 
 include_once 'conexion.php';
 
+// Leer tareas
 $sql_leer = 'SELECT * FROM tareas';
 
 $gsent = $pdo->prepare($sql_leer);
@@ -9,7 +10,31 @@ $gsent->execute();
 
 $tareas = $gsent->fetchAll();
 
-var_dump($tareas);
+// var_dump($tareas);
+
+// Añadir tareas
+if($_POST){
+  $tarea = $_POST['tarea'];
+  $descripcion = $_POST['descripcion'];
+
+  $sqlInsertar = 'INSERT INTO tareas (tarea, descripcion) VALUES (?,?)';
+
+  $sentenciaAgregar = $pdo->prepare($sqlInsertar);
+  $sentenciaAgregar->execute(array($tarea, $descripcion));
+
+}
+
+
+if($_GET){
+  $id = $_GET['id'];
+  $sql_unico = 'SELECT * FROM tareas WHERE id=?';
+  $gsent_unico = $pdo->prepare($sql_unico);
+  $gsent_unico->execute(array($id));
+  $tareas_unico = $gsent_unico->fetch();
+
+  //var_dump($tareas_unico);
+}
+
 
 ?>
 
@@ -22,13 +47,15 @@ var_dump($tareas);
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <title>Todolist php</title>
   </head>
   <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6">
+          <div class="col-md-6">
 
             <?php foreach($tareas as $tarea): ?>
 
@@ -36,23 +63,49 @@ var_dump($tareas);
                     <?php echo $tarea['tarea'] ?>
                     -
                     <?php echo $tarea['descripcion'] ?> 
+
+                    <a href="eliminar.php?id=<?php echo $tarea['id'] ?>" class="float-right ml-2">
+                      <i class="fas fa-trash"></i>
+                    </a>
+
+                    <a href="index.php?id=<?php echo $tarea['id'] ?>" class="float-right">
+                      <i class="fas fa-edit"></i>
+                    </a>
                 </div>
 
                 <?php endforeach ?>
-            </div>
+          </div>
+
+          <div class="col-md-6">
+              <?php if(!$_GET): ?>
+
+              <h2>Añadir Tareas</h2>
+              <form method="POST">
+                <input type="text" class="form-control" name="tarea" placeholder="Tarea">
+                <input type="text" class="form-control mt-3" name="descripcion" placeholder="Descripción">
+                <button class="btn btn-primary mt-3">Añadir</button>
+              </form>
+
+              <?php endif ?>
+
+              <?php if($_GET): ?>
+
+              <h2>Editar Tareas</h2>
+              <form method="GET" action="editar.php">
+                <input type="text" class="form-control" name="tarea" placeholder="Tarea" value="<?php echo $tareas_unico['tarea'] ?>">
+                <input type="text" class="form-control mt-3" name="descripcion" placeholder="Descripción" value="<?php echo $tareas_unico['descripcion'] ?>">
+                <input type="text" class="d-none" name="id" value="<?php echo $tareas_unico['id'] ?>">
+                <button class="btn btn-primary mt-3">Añadir</button>
+              </form>
+
+              <?php endif ?>
+          </div>
         </div>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    -->
   </body>
 </html>

@@ -1,38 +1,38 @@
 [
     {
-        "precio": 500,
+        "precio": 3,
         "id": 1,
         "title": "Café",
-        "thumbnailUrl": "https://picsum.photos/id/0/600"
+        "thumbnailUrl": "https://s1.eestatic.com/2017/02/13/cocinillas/Cocinillas_193495389_116293002_1024x576.jpg"
     },
     {
-        "precio": 300,
+        "precio": 15,
         "id": 2,
         "title": "Pizza",
-        "thumbnailUrl": "https://picsum.photos/id/10/600"
+        "thumbnailUrl": "https://www.laespanolaaceites.com/wp-content/uploads/2019/06/pizza-con-chorizo-jamon-y-queso-1080x671.jpg"
     },
     {
-        "precio": 100,
+        "precio": 0.50,
         "id": 3,
         "title": "Agua",
-        "thumbnailUrl": "https://picsum.photos/id/20/600"
+        "thumbnailUrl": "https://as.com/deporteyvida/imagenes/2018/06/07/portada/1528388373_274404_1528388551_noticia_normal.jpg"
     },
     {
-        "precio": 50,
+        "precio": 1,
         "id": 4,
         "title": "Sandía",
-        "thumbnailUrl": "https://picsum.photos/id/30/600"
+        "thumbnailUrl": "https://mk0lanoticiavesdar5g.kinstacdn.com/wp-content/uploads/2020/08/5-razones-para-comer-sandia-todos-los-dias.jpg"
     },
     {
-        "precio": 10,
+        "precio": 1.5,
         "id": 5,
-        "title": "Mango",
-        "thumbnailUrl": "https://picsum.photos/id/40/600"
+        "title": "Manzana",
+        "thumbnailUrl": "https://www.eluniversal.com.mx/sites/default/files/2016/09/07/manzana.jpg"
     },
     {
-        "precio": 150,
+        "precio": 1.50,
         "id": 6,
-        "title": "Chela",
-        "thumbnailUrl": "https://picsum.photos/id/50/600"
+        "title": "Cocacola",
+        "thumbnailUrl": "https://estaticos.elmundo.es/assets/multimedia/imagenes/2016/12/25/14826637877992.jpg"
     }
 ]
