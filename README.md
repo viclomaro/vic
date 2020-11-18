@@ -6,7 +6,7 @@ En este repositorio trabajo sobre proyectos propios, tanto para poner en prácti
 ## Proyectos:
 
 ### CrudProyect
-Desarrollo de CRUD en Angular, basado en creación de artistas y álbumes relacionados entre sí.
+Desarrollo de CRUD en Angular, basado en creación de artistas y álbumes relacionados entre sí, dependiente de Backend.
 
 ### CvWeb:
 Desarrollo de currículum web sobre Node.JS - Express con vistas (HBS) para la creación del CRUD y front desarrollado con React.
@@ -18,8 +18,11 @@ sobre esta misma plataforma.
 Se trata de una app que permite mantener una conversación entre dos usuarios mediante una pantalla de chat, tanto a tiempo real como a destiempo, dado que los mensajes 
 se almacenan en la bbdd de Firebase, cuando un usuario escriba al otro sin estar ambos conectados, al conectarse en otro momento los recibirá.
 
+### TodoList
+Lista de tareas CRUD desarrollada en PHP y Html con base de datos MySQL.
+
 ### VainillaBuy
-Desarrollo de carro de compra en javaScript Vainilla.
+Desarrollo de carro de compra en javaScript poniendo en práctica el uso del DOM con template y fragment.
 
 ### WearWeather:
 Desarrollo de aplicación sobre Angular (v.9) en la que se conecta a través de un servicio a una API-REST de metereología para obtener datos sobre el tiempo.
