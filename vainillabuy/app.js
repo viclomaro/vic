@@ -1,7 +1,7 @@
 // Cargar DOM
 document.addEventListener('DOMContentLoaded', () => {
     fetchData();
-})
+});
 
 // Obtener datos de la api
 const fetchData = async () => {
@@ -49,8 +49,8 @@ const detectarBoton = (data) => {
             }
             carrito[producto.id] = { ...producto };
             pintarCarrito();
-        })
-    })
+        });
+    });
 }
 
 // Obtener productos del carrito
@@ -66,6 +66,10 @@ const pintarCarrito = () => {
         template.querySelectorAll('td')[1].textContent = producto.cantidad;
         template.querySelector('span').textContent = producto.precio * producto.cantidad;
 
+        //botones
+        template.querySelector('.btn-info').dataset.id = producto.id;
+        template.querySelector('.btn-danger').dataset.id = producto.id;
+
         const clone = template.cloneNode(true);
         fragment.appendChild(clone);
     })
@@ -75,10 +79,16 @@ const pintarCarrito = () => {
     accionBotones();
 }
 
+// Pintar contenido del carrito
 const footer = document.querySelector('#footer-carrito');
 const pintarFooter = () => {
 
     footer.innerHTML = '';
+
+    if (Object.keys(carrito).length === 0) {
+        footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>`;
+        return
+    }
 
     const template = document.querySelector('#template-footer').content;
     const fragment = document.createDocumentFragment();
@@ -87,7 +97,6 @@ const pintarFooter = () => {
     const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0);
     const nPrecio = Object.values(carrito).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0);
 
-
     template.querySelectorAll('td')[0].textContent = nCantidad;
     template.querySelector('span').textContent = nPrecio;
 
@@ -95,10 +104,42 @@ const pintarFooter = () => {
     fragment.appendChild(clone);
 
     footer.appendChild(fragment);
+
+    const boton = document.querySelector('#vaciar-carrito');
+    boton.addEventListener('click', () => {
+        carrito = {}
+        pintarCarrito()
+    });
+
 }
 
+// Funcionalidad de botones agregar y eliminar
 const accionBotones = () => {
+    const botonAgregar = document.querySelectorAll('#items .btn-info');
+    const botonEliminar = document.querySelectorAll('#items .btn-danger');
 
+    botonAgregar.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const producto = carrito[btn.dataset.id];
+            producto.cantidad++;
+            carrito[btn.dataset.id] = { ...producto };
+            pintarCarrito();
+        });
+    });
+
+    botonEliminar.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const producto = carrito[btn.dataset.id];
+            producto.cantidad--;
+            if (producto.cantidad === 0) {
+                delete carrito[btn.dataset.id];
+                pintarCarrito();
+            } else {
+                carrito[btn.dataset.id] = { ...producto };
+                pintarCarrito();
+            }
+        });
+    });
 }
 
 
