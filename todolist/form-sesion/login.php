@@ -23,7 +23,7 @@ $contrasena_bbdd = $resultado['contrasena'];
 
 if(password_verify($contrasena_login, $contrasena_bbdd)){
     $_SESSION['admin'] = $usuario_login;
-    header('Location: restringido.php');
+    header('Location: ../index.php');
 }else{
     echo 'La contraseña no es válida';
     die();

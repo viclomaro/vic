@@ -22,6 +22,11 @@ if($_POST){
   $sentenciaAgregar = $pdo->prepare($sqlInsertar);
   $sentenciaAgregar->execute(array($tarea, $descripcion));
 
+  // Cerrar conexión bbdd y sentencia
+  $sentenciaAgregar = null;
+  $pdo = null;
+  header('location:index.php');
+
 }
 
 
@@ -33,6 +38,8 @@ if($_GET){
   $tareas_unico = $gsent_unico->fetch();
 
   //var_dump($tareas_unico);
+
+  $gsent_unico = null;
 }
 
 
@@ -109,3 +116,11 @@ if($_GET){
 
   </body>
 </html>
+
+<!-- Cerramos la conexión tras el GET -->
+<?php
+
+$pdo = null;
+$gsent = null;
+
+?>
