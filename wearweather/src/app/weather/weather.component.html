@@ -1,11 +1,11 @@
 <div class="container text-center mt-5">
-  <h4>Próximos días</h4>
+  <h5>Próximos días</h5>
 </div>
 
 <div class="container">
   <table class="table text-center">
     <thead>
-      <tr>
+      <tr class="date">
         <th scope="col">{{this.arrWeather?.day2.date | date:"mediumDate"}}</th>
         <th scope="col">{{this.arrWeather?.day3.date | date:"mediumDate"}}</th>
         <th scope="col">{{this.arrWeather?.day4.date | date:"mediumDate"}}</th>
@@ -23,7 +23,6 @@
         <td><img src={{getIcon5}} alt="imgIcon"><br>{{this.arrWeather?.day5.temperature_max}}º /
           {{this.arrWeather?.day5.temperature_min}}º</td>
       </tr>
-
     </tbody>
   </table>
 </div>

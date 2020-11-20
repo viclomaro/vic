@@ -1,10 +1,10 @@
 .titulo {
     font-family: 'Sedgwick Ave', cursive;
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 .img{
-    width: 25px;
-    margin-left: -25px;
-    margin-top: -20px;
+    max-width: 4.5em;
+    margin-left: -1em;
+    margin-top: -1em;
 }

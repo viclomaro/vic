@@ -1,0 +1,16 @@
+table{
+    margin-bottom: 100px;
+}
+
+.date{
+    font-size: 0.7em;
+}
+
+.date th{
+    padding: 0.5em;
+}
+
+tbody tr td img{
+    width: 50%;
+    height: auto;
+}
