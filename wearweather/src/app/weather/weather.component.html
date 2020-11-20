@@ -3,13 +3,13 @@
 </div>
 
 <div class="container">
-  <table class="table">
+  <table class="table text-center">
     <thead>
       <tr>
-        <th scope="col">{{this.arrWeather?.day2.date}}</th>
-        <th scope="col">{{this.arrWeather?.day3.date}}</th>
-        <th scope="col">{{this.arrWeather?.day4.date}}</th>
-        <th scope="col">{{this.arrWeather?.day5.date}}</th>
+        <th scope="col">{{this.arrWeather?.day2.date | date:"mediumDate"}}</th>
+        <th scope="col">{{this.arrWeather?.day3.date | date:"mediumDate"}}</th>
+        <th scope="col">{{this.arrWeather?.day4.date | date:"mediumDate"}}</th>
+        <th scope="col">{{this.arrWeather?.day5.date | date:"mediumDate"}}</th>
       </tr>
     </thead>
     <tbody>

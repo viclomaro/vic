@@ -1,8 +1,10 @@
 .titulo {
-margin-top: 3em;
+    font-family: 'Sedgwick Ave', cursive;
+    margin-top: 3em;
 }
 
-.image-titulo{
-    width: 75%;
-    height: auto;
+.img{
+    width: 25px;
+    margin-left: -25px;
+    margin-top: -20px;
 }

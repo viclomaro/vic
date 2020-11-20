@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     this.getWeather();
   }
 
-  async getWeather() {
+  async getWeather(): Promise<any> {
     // call to api 
     this.arrWeather = await this.ApiService.getWeather();
     // Set url icon
