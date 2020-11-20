@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeComponent } from '../home/home.component';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-weather',
@@ -7,11 +7,40 @@ import { HomeComponent } from '../home/home.component';
   styleUrls: ['./weather.component.css']
 })
 export class WeatherComponent implements OnInit {
-  
 
-  constructor() { }
+  arrWeather;
+  getIcon2;
+  getIcon3;
+  getIcon4;
+  getIcon5;
+
+
+  constructor(private ApiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getWeather();
+    
+  }
+
+  async getWeather() {
+    this.arrWeather = await this.ApiService.getWeather();
+    this.setFormattedUrlIcon();
+    console.log(this.arrWeather);
+  }
+
+  setFormattedUrlIcon(): void {
+    const icon2 = this.arrWeather.day2.icon;
+    const icon3 = this.arrWeather.day3.icon;
+    const icon4 = this.arrWeather.day5.icon;
+    const icon5 = this.arrWeather.day5.icon;
+    const urlIcon = "https://v5i.tutiempo.net/wi/02/50/";
+
+    this.getIcon2 = `${urlIcon}${icon2}.png`;
+    this.getIcon3 = `${urlIcon}${icon3}.png`;
+    this.getIcon4 = `${urlIcon}${icon4}.png`;
+    this.getIcon5 = `${urlIcon}${icon5}.png`;
+
+
   }
 
 }
