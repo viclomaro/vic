@@ -14,3 +14,11 @@ tbody tr td img{
     width: 50%;
     height: auto;
 }
+
+.hotTemp{
+    color: red;
+}
+
+.coldTemp{
+    color: blue;
+}

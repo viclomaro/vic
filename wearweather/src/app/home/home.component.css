@@ -18,7 +18,7 @@
 }
 
 .container .row .tituloTiempo .iconImg{
-    width: 50%;
+    width: 35%;
     height: auto;
 }
 
@@ -29,3 +29,55 @@
 .container .row .tituloTiempo .coldTemp{
     color: blue;
 }
+
+ @media (min-width: 768px) and (max-width: 991px) { 
+
+    .tituloTiempo{
+        margin-top:8em;
+    }
+
+    .container .row .tituloTiempo .iconImg{
+        width: 40%;
+        height: auto;
+    }
+
+    .img-woman img{
+        margin-left: -2.5em;
+    }
+
+    .img-man img{
+        margin-left: -1em;
+    }
+ }
+
+ @media (min-width: 1200px) { 
+
+    .img-woman img,.img-man img{
+        width: 100%;
+        height: auto;
+        border-radius: 60%;
+        margin-top: 3.5em;
+    }
+
+    .img-woman img{
+        margin-right: -5em;
+    }
+
+    .img-man img{
+        margin-left: -2.2em;
+    }
+
+    .tituloTiempo{
+        margin-top:15em;
+    }
+
+    .container .row .tituloTiempo .datos h5{
+        font-size: 1.5em;
+    }
+
+    .container .row .tituloTiempo .iconImg{
+        width: 30%;
+        height: auto;
+    }
+
+ }
