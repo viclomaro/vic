@@ -3,23 +3,12 @@
     margin-top: 2em;
 }
 
-.img{
-    max-width: 4.5em;
-    margin-left: -5.5em;
-    margin-top: -1em;
-}
 
 @media (min-width: 768px) and (max-width: 991){
     .titulo h3{
         font-family: 'Sedgwick Ave', cursive;
         margin-top: 0.7em;
         font-size: 2.5em;
-    }
-
-    .img{
-        max-width: 6em;
-        margin-left: -6.5em;
-        margin-top: 1em;
     }
 
 }
@@ -31,9 +20,4 @@
         font-size: 3.5em;
     }
 
-    .img{
-        max-width: 7em;
-        margin-left: -11em;
-        margin-top: 1em;
-    }
 }
